@@ -10,6 +10,7 @@ define hina = Character("Hina")
 # The game starts here.
 
 label start:
+
     play music "audio/battle_theme.mp3"
 
     "I knew something strange was happening. It was impossible not to notice."
@@ -39,7 +40,7 @@ label start:
 
     with vpunch
     play sound "audio/rumble.mp3"
-    show cole normal at center with dissolve
+    show cole1 normal at center with dissolve
     "Cole" "“...”"
 
     # "[VFX" "{i}Bright ball of fire coming down from sky (use drop shadow to darken the background around the area of the blast).{/i} {i}Zoom in on one of the houses.{/i}]
