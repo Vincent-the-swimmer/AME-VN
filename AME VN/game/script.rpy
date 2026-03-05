@@ -10,7 +10,7 @@ define hina = Character("Hina")
 # The game starts here.
 
 label start:
-    show hina1
+    show ame1 wink frown foldedl
 
     play music "audio/battle_theme.mp3"
 

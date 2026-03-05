@@ -88,11 +88,11 @@ layeredimage ame1:
     
     # armL
     group arml auto:
-        attribute down default:
+        attribute downl default:
             "ame1_arml_downl"
     #armR
     group armr auto:
-        attribute down default:
+        attribute downr default:
             "ame1_armr_downr"
     
     #extra
