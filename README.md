@@ -12,4 +12,5 @@ For any extra attributes, include a "x" at the end of the attribute you want.
 
 Examples:
 show kai1 angry angryx
+\newline
 show ame1 wink frown foldedl
