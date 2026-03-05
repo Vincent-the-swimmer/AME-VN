@@ -1,59 +1,42 @@
-layeredimage hina:
+layeredimage hina1:
     #base
-    always "hina1"
+    always "hina1_base"
 
     #eyes
-    group eyes:
+    group eyes auto:
         attribute neutral default:
             "hina1_eyes_neutral"
-        attribute sad:
-            "hina1_eyes_sad"
-        attribute wink:
-            "hina1_eyes_wink"
-        attribute worry:
-            "hina1_eyes_worry"
-
+        
     #mouth
-    group mouth:
+    group mouth auto:
         attribute open default:
             "hina1_mouth_open"
-        attribute grit:
-            "hina1_mouth_grit"
-        attribute smile:
-            "hina1_mouth_smile"
-        attribute smirk:
-            "hina1_mouth_smirk"
-        attribute tongue:
-            "hina1_mouth_tongue"
 
     #armL
-    group armL:
+    group arml auto:
         attribute fist default:
-            "hina1_arml_fist"
-        attribute peace:
-            "hina1_arml_peace"
-        attribute point:
-            "hina1_arml_point"
+            "hina1_arml_fistl"
+
     #armR
-    group armR:
+    group armr:
         attribute down default:
-            "hina1_armr_down"
+            "hina1_armr_downr"
 
     #extra
-    attribute angry:
+    attribute angryx:
         "hina1_extra_angry" 
-    attribute blush:
+    attribute blushx:
         "hina1_extra_blush"
     attribute drops:
         "hina1_extra_drops"
-    attribute sparkle:
+    attribute sparklex:
         "hina1_extra_sparkle"
-    attribute sweat:
+    attribute sweatx:
         "hina1_extra_sweat"
 
 layeredimage cole1:
     #base
-    always "cole12"
+    always "cole1_base"
 
     #flame
     group flame auto:
@@ -82,10 +65,124 @@ layeredimage cole1:
             "cole1_armr_claw" 
     
     # extra
-    attribute sweat:
+    attribute sweatx:
         "cole1_extra_sweat"
-    attribute angry:
+    attribute angryx:
         "cole1_extra_angry"
-    attribute sparkle:  
+    attribute sparklex:  
         "cole1_extra_sparkle"   
-        
+
+layeredimage ame1:
+    #base
+    always "ame1_base"
+
+    # eyes
+    group eyes auto:
+        attribute neutral default:
+            "ame1_eyes_neutral"
+    
+    # mouth
+    group mouth auto:
+        attribute open default:
+            "ame1_mouth_open"
+    
+    # armL
+    group arml auto:
+        attribute down default:
+            "ame1_arml_downl"
+    #armR
+    group armr auto:
+        attribute down default:
+            "ame1_armr_downr"
+    
+    #extra
+    attribute sweatx:
+        "ame1_extra_sweat"
+    attribute angryx:
+        "ame1_extra_angry"
+    attribute sparklex:
+        "ame1_extra_sparkle"
+    attribute dropsx:
+        "ame1_extra_drops"  
+    attribute blushx:
+        "ame1_extra_blush"
+
+layeredimage kai1:
+    #base
+    always "kai1_base"
+
+    #eyes
+    group eyes auto:
+        attribute neutral default:
+            "kai1_eyes_neutral"
+    
+    #mouth
+    group mouth auto:
+        attribute open default:
+            "kai1_mouth_open"
+    
+    #armL
+    group arml auto:
+        attribute down default:
+            "kai1_arml_downl"
+    #armR
+    group armr auto:
+        attribute down default:
+            "kai1_armr_behindr"
+    
+    #extra
+    attribute sweatx:
+        "kai1_extra_sweat"
+    attribute angryx:
+        "kai1_extra_angry"
+    attribute sparklex:
+        "kai1_extra_sparkle"
+    attribute dropsx:
+        "kai1_extra_drops"  
+    attribute blushx:    
+        "kai1_extra_blush"
+
+layeredimage sixth1:
+    #base
+    always "sixth1_base"
+
+    #eyes
+    group eyes auto:
+        attribute neutral default:
+            "sixth1_eyes_neutral"
+    
+    #mouth
+    group mouth auto:
+        attribute open default:
+            "sixth1_mouth_open"
+    
+    #armL
+    group arml auto:
+        attribute down default:
+            "sixth1_arml_pointl"
+    #armR
+    group armr auto:
+        attribute down default:
+            "sixth1_armr_hipr"
+    
+    #cat
+    group cat:
+        attribute neutralc default:
+            "sixth1_cat_neutralc"
+        attribute shockc:
+            "sixth1_cat_shockc"
+        attribute droopc:
+            "sixth1_cat_droopc"
+    
+    #extra
+    attribute sweatx:
+        "sixth1_extra_sweat"
+    attribute angryx:
+        "sixth1_extra_angry"
+    attribute sparklex:
+        "sixth1_extra_sparkle"
+    attribute dropsx:
+        "sixth1_extra_drops"  
+    attribute blushx:    
+        "sixth1_extra_blush"
+
