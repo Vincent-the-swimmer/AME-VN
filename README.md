@@ -11,6 +11,5 @@ For armR attributes, include a "r" at the end of the attribute you want.
 For any extra attributes, include a "x" at the end of the attribute you want. 
 
 Examples:
-show kai1 angry angryx
-\newline
+show kai1 angry angryx\
 show ame1 wink frown foldedl
