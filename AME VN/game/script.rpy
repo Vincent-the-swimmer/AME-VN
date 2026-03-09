@@ -10,7 +10,7 @@ define hina = Character("Hina")
 # The game starts here.
 
 label start:
-
+    #hi
     play music "audio/battle_theme.mp3"
 
     "I knew something strange was happening. It was impossible not to notice."
