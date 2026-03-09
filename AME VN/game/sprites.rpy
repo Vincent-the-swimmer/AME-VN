@@ -47,22 +47,12 @@ layeredimage cole1:
         attribute open default
 
     # armL
-    group arml:
-        attribute pocket default:
-                "cole1_arml_pocket"
-        attribute claw:
-            "cole1_arml_claw"
+    group arml auto:
+        attribute pocketl default
 
     # armR:
-    group armr:
-        attribute grip default:
-            "cole1_armr_grip"
-        attribute flame:
-            "cole1_armr_flame"
-        attribute tie:
-            "cole1_armr_tie"
-        attribute claw:
-            "cole1_armr_claw" 
+    group armr auto:
+        attribute clawr default
     
     # extra
     attribute sweatx:
@@ -166,13 +156,7 @@ layeredimage sixth1:
             "sixth1_armr_hipr"
     
     #cat
-    group cat:
-        attribute neutralc default:
-            "sixth1_cat_neutralc"
-        attribute shockc:
-            "sixth1_cat_shockc"
-        attribute droopc:
-            "sixth1_cat_droopc"
+    group cat auto
     
     #extra
     attribute sweatx:
