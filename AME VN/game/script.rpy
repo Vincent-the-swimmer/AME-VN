@@ -10,7 +10,6 @@ define hina = Character("Hina")
 # The game starts here.
 
 label start:
-    show ame1 wink frown foldedl
 
     play music "audio/battle_theme.mp3"
 
@@ -26,12 +25,12 @@ label start:
     play sound "audio/rumble.mp3"
     show bg neighborhood with vpunch
 
-    show hina nervous at left
+    show hina1 worry at left with dissolve
 
     "Hina" "“How?! Kai, how did he get so strong? I thought we kept him in check this time!”"
 
     # "[Kai, adjusting his glasses, appears]"
-    show kai normal at right
+    show kai1 adjustr at right with dissolve
 
     "Kai" "“I tracked all of his movements ever since we arrived here. There is no justification.”"
 
@@ -41,58 +40,78 @@ label start:
 
     with vpunch
     play sound "audio/rumble.mp3"
-    show cole1 normal at center with dissolve
+    show cole1 at center with dissolve
     "Cole" "“...”"
 
     # "[VFX" "{i}Bright ball of fire coming down from sky (use drop shadow to darken the background around the area of the blast).{/i} {i}Zoom in on one of the houses.{/i}]
     # Ame Universe – Indoors]
     # {i}big bang{/i}]
     # {i}fade Ame’s destroyed house with Ame (scared expression, right side of screen), Hina (angry expression, left side of screen), and Kai (nervous expression, next to Hina){/i}]"
+    scene bg indoors with fade
 
-    show bg indoors with fade
-
-    show ame scared at right
-    show hina angry at left
-    show kai nervous at center
-
+    show hina1 angry angryx grit at left with dissolve
+    show kai1 worry nervous at center with dissolve
+    show ame1 sad frown chestr chestl at right with dissolve
     
     "Ame" "Heh…? Uh… Uh… oh god…" 
-    "Ame scared nervous" "You guys couldn’t keep this outside?"
+    "Ame" "You guys couldn’t keep this outside?"
     # "[VFX" "{i}Cole moves in from the left, Hina and Kai come in front of Ame on the right side of the screen. Switch Hina to a nervous expression.{/i}]"
+
+    show hina1 angry angryx grit zorder 3 with dissolve:
+        xalign 0.6
+    show kai1 worry nervous zorder 2 with dissolve:
+        xalign 1.0
+    show ame1 sad frown chestr chestl with dissolve:
+        xalign 0.8
+
+    show cole1 with dissolve:
+        xalign -0.1
 
     "Cole" "“You two refuse to die… such a pitiful struggle.”"
 
-    "Ame nervous angry" "“Die?! Huh? If you want to kill each other, get out of my house first!”"
+    "Ame" "“Die?! Huh? If you want to kill each other, get out of my house first!”"
 
     "Cole" "“Oh well… time to finish up.”"
 
-    "Hina angry" "“Screw you!”"
+    "Hina" "“Screw you!”"
 
-    "Ame angry" "“Oi! I’m not a piece of furniture! Stop ignoring me!”"
+    "Ame" "“Oi! I’m not a piece of furniture! Stop ignoring me!”"
 
     # "[VFX" "{i}shaking{/i}]
+    with vpunch
     # {i}rumbling{/i}]"
 
     "Kai" "I’m sorry you got caught in the crossfire like this, young one…"
 
     "Ame" "“I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy…”"
 
-    "Cole blue flames, angry" "..."
+    show cole1 blueangry with dissolve
+    "Cole" "..."
 
     # "[VFX" "{i}shaking intensifies{/i}]"
+    with vpunch 
 
     "Hina" "“I’m sorry, kid… I didn’t mean to drag you and your home into this mess. I’m so, so sorry… I hope the next life is kind to you.”"
 
-    "Ame scared" "“Wait, the next life? No… please…”"
+    hide hina1 
+    hide kai1
+    hide cole1
+    hide ame1
+    show ame1 sad dropsx frown chestr chestl at center with dissolve
+    "Ame" "“Wait, the next life? No… please…”"
 
     # "[VFX" "{i}light fills the screen{/i}]
     # {i}music stops{/i}]"
 
     # "[Scene 3" "Spirit Realm]"
-
+    scene bg spirit_realm with fade
     # "[VFX" "Light recedes, Spirit Realm background, Hina (angry) and Kai (neutral)]"
 
+    show hina1 angry angryx grit at left with dissolve
+
     "Hina" "“Another world… gone… AHHHHH! We keep losing! Why? Why? Why?!!!!!”"
+
+    show kai1 at right with dissolve
 
     "Kai" "“Not much we can do now… we’re stuck here for a while.”"
 
@@ -102,6 +121,7 @@ label start:
 
     # "[VFX" "{i}fade to CG1 – Hina and Kai looking at Ame, laying unconscious on the floor{/i}]
     # Building Grandeur Theme]"
+    play music "audio/grandeur_theme.mp3"
 
     "Kai" "“They’re here… but that’s impossible. I’ve never seen anything like this before.”"
 
@@ -111,54 +131,81 @@ label start:
 
     # "[VFX" "Low, pulsing glow]
     # [Spirit Realm Background with Hina (nervous), Kai (calm), and Ame (confused)]"
-
+    
+    hide hina1
+    show hina1 worry at left
+    show ame1 sad frown chestr chestl at center
     "Ame" "“Where… where am I? I was at my house… and the wall broke, and… and… there were three people… what happened? Didn’t I… didn’t I die? Is this Heaven?”"
 
     # "[Stop Music]"
+    stop music
 
     "Kai" "“This isn’t Heaven. It’s the Spirit Realm. Hina and I live here while building up power. It’s a waiting room, essentially. As for what happened…”"
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
-    "Hina excited" "“YOU’RE ALIVE!”"
+    show hina1 neutral smile sparklex at left
+
+    "Hina" "“YOU’RE ALIVE!”"
 
     # "[Music" "Quirky Theme]"
+    play music "audio/quirky_theme.mp3"
+
+    show ame1 neutral smile sparklex
 
     "Ame" "“I’m alive? Thank god… after that guy told me it wasn’t Heaven, I was afraid it was the other place.”"
 
-    "Kai adjusting glasses" "“Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?”"
+    show kai1 adjustr at right
+
+    "Kai" "“Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?”"
 
     "Ame" "“I’m Ame… you two are… Hina and Kai, right?”"
 
-    "Hina excited expression" "“Bingo! Good job paying attention! You’re Ame, huh? What an interesting name.”"
+    "Hina" "“Bingo! Good job paying attention! You’re Ame, huh? What an interesting name.”"
 
     "Ame" "“Thank you for reviving me. So… what exactly are you two? You aren’t normal, right? With all this divine energy and whatnot?”"
 
-    "Hina puffy cheeks" "“I’m perfectly normal, thank you very much!”"
+    show hina1 tongue sparklex at left
 
-    "Kai normal" "“We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world.”"
+    "Hina" "“I’m perfectly normal, thank you very much!”"
 
-    "Hina angry" "“That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!”"
+    show kai1 at right
 
+    "Kai" "“We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world.”"
+
+    show hina1 angry angryx grit at left
+
+    "Hina" "“That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!”"
+
+    show kai1 frown
     "Kai annoyed" "“That’s quite enough, Hina.”"
 
+    hide hina1
+    show hina1 smirk at left
     "Hina nervous" "“Uh oh, he’s mad.”"
 
     # "[Music" "Sad Theme]"
+    play music "audio/sad_theme.mp3"
 
-    "Ame scared" "“Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?”"
+    show hina1 sad open at left
+    show ame1 sad frown chestr chestl at center
 
-    "Hina dreary" "“Something like that… pretty close.”"
+    "Ame" "“Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?”"
+
+    "Hina" "“Something like that… pretty close.”"
 
     "Ame" "“Pretty close… meaning they’re not dead. Could you send me back? You’re gods, right? You were able to bring me back to life. Can you put me back in my world?”"
 
     "Kai" "“That’s… that’s not possible. I’m really sorry, Ame, but even if we could send you back… you wouldn’t want to see it.”"
 
-    "Ame sad" "“I need to know. I can’t… I can’t just not know what happened to them.”"
+    "Ame" "“I need to know. I can’t… I can’t just not know what happened to them.”"
 
     "Hina" "“I understand…”"
 
     # "[VFX" "Move Hina closer to Ame]
+    show hina1 sad open at left with move:
+        xalign 0.1
+
     # General Conversation]"
 
     "Kai" "“What are you doing, Hina? Don’t tell me you’re actually going to show them…?”"
@@ -171,7 +218,7 @@ label start:
 
     "Kai" "“She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind! Well… I guess she is kind of rash, but her heart’s usually in the right place! But I guess…”"
 
-    "Hina " "“Kai, shut up!”"
+    "Hina" "“Kai, shut up!”"
 
     "Hina" "“Ahem… The mind link will let me show you what happens to dimensions taken over by that plague. It can also do other things, but I won’t abuse it. You have my word.”"
 
