@@ -1,3 +1,4 @@
+#Hina Sprites
 layeredimage hina1:
     #base
     always "hina1_base"
@@ -14,12 +15,12 @@ layeredimage hina1:
 
     #armL
     group arml auto:
-        attribute fist default:
+        attribute fistl default:
             "hina1_arml_fistl"
 
     #armR
     group armr:
-        attribute down default:
+        attribute downr default:
             "hina1_armr_downr"
 
     #extra
@@ -34,25 +35,31 @@ layeredimage hina1:
     attribute sweatx:
         "hina1_extra_sweat"
 
+##########################################################
+
+#Cole Sprites
 layeredimage cole1:
     #base
     always "cole1_base"
 
     #flame
     group flame auto:
-        attribute redcalm default
+        attribute redcalm default:
+            "cole1_flame_redcalm"
 
     # mouth
     group mouth auto:
-        attribute open default
-
+        attribute open default:
+            "cole1_mouth_open"
     # armL
     group arml auto:
-        attribute pocketl default
+        attribute pocketl default:
+            "cole1_arml_pocketl"
 
     # armR:
     group armr auto:
-        attribute gripr default
+        attribute gripr default:
+            "cole1_armr_gripr"
     
     # extra
     attribute sweatx:
@@ -61,6 +68,10 @@ layeredimage cole1:
         "cole1_extra_angry"
     attribute sparklex:  
         "cole1_extra_sparkle"   
+
+##########################################################
+
+#Ame Sprites
 
 layeredimage ame1:
     #base
@@ -97,6 +108,10 @@ layeredimage ame1:
     attribute blushx:
         "ame1_extra_blush"
 
+##########################################################
+
+#Kai Sprites
+
 layeredimage kai1:
     #base
     always "kai1_base"
@@ -113,11 +128,11 @@ layeredimage kai1:
     
     #armL
     group arml auto:
-        attribute down default:
+        attribute downl default:
             "kai1_arml_downl"
     #armR
     group armr auto:
-        attribute down default:
+        attribute behindr default:
             "kai1_armr_behindr"
     
     #extra
@@ -131,6 +146,10 @@ layeredimage kai1:
         "kai1_extra_drops"  
     attribute blushx:    
         "kai1_extra_blush"
+
+##########################################################
+
+#Sixth Sprites
 
 layeredimage sixth1:
     #base
@@ -148,11 +167,11 @@ layeredimage sixth1:
     
     #armL
     group arml auto:
-        attribute down default:
+        attribute pointl default:
             "sixth1_arml_pointl"
     #armR
     group armr auto:
-        attribute down default:
+        attribute hipr default:
             "sixth1_armr_hipr"
     
     #cat
