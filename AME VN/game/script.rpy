@@ -205,7 +205,6 @@ label start:
     # "[VFX" "Move Hina closer to Ame]
     show hina1 sad open at left with move:
         xalign 0.1
-
     # General Conversation]"
 
     "Kai" "“What are you doing, Hina? Don’t tell me you’re actually going to show them…?”"
