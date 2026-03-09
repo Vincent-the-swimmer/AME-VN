@@ -52,7 +52,7 @@ layeredimage cole1:
 
     # armR:
     group armr auto:
-        attribute clawr default
+        attribute gripr default
     
     # extra
     attribute sweatx:
