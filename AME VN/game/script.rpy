@@ -1,8 +1,4 @@
-﻿#PLEASE VSC PLEASEEEEEEEEEEEEEEEEEEEE GITHUB LET ME WORKKKKK
-#I'M JUST A BOY WHO WANTS TO CODE :sob:
-#I BEG OF YOU PLEASE PLEASE PLEASE
-
-# Declare characters used by this game. The color argument colorizes the
+﻿# Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
 define cole = Character("Cole")
