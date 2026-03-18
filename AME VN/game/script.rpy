@@ -8,7 +8,6 @@ define hina = Character("Hina")
 # The game starts here.
 
 label start:
-    #hi
     play music "audio/battle_theme.mp3"
 
     "I knew something strange was happening. It was impossible not to notice."
@@ -129,8 +128,7 @@ label start:
 
     # "[VFX" "Low, pulsing glow]
     # [Spirit Realm Background with Hina (nervous), Kai (calm), and Ame (confused)]"
-    
-    hide hina1
+
     show hina1 sweatx at left
     show ame1 side open dropsx at center
     "Ame" "“Where… where am I? I was at my house… and the wall broke, and… and… there were three people… what happened? Didn’t I… didn’t I die? Is this Heaven?”"
@@ -163,6 +161,7 @@ label start:
 
     "Ame" "“Thank you for reviving me. So… what exactly are you two? You aren’t normal, right? With all this divine energy and whatnot?”"
 
+    hide hina1
     show hina1 tongue sparklex at left
 
     "Hina" "“I’m perfectly normal, thank you very much!”"
@@ -171,21 +170,22 @@ label start:
 
     "Kai" "“We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world.”"
 
+    hide hina1
     show hina1 angry grit angryx pointl at left
 
     "Hina" "“That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!”"
 
     show kai1 frown
-    "Kai annoyed" "“That’s quite enough, Hina.”"
+    "Kai" "“That’s quite enough, Hina.”"
 
     hide hina1
     show hina1 smirk at left
-    "Hina nervous" "“Uh oh, he’s mad.”"
-
+    "Hina" "“Uh oh, he’s mad.”"
     # "[Music" "Sad Theme]"
     play music "audio/sad_theme.mp3"
 
-    show hina1 sad frown sweatx at left
+    hide hina1    
+    show hina1 sad frown sweatx
     show ame1 sad grit chestr chestl at center
 
     "Ame" "“Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?”"
@@ -223,8 +223,8 @@ label start:
 
     "Hina" "“It’s the only way I can show you what you want to see. It’s either this, or you don’t see it.”"
 
-    #Ame hesistant, what does she look like?
-    "Ame hesitant" "“Alright...I need to know. I consent to the mind link. How does this work?”"
+    show ame1 side frown chestl chestr sweatx
+    "Ame" "“Alright...I need to know. I consent to the mind link. How does this work?”"
 
     "Hina" "“Well…”"
 
@@ -243,21 +243,21 @@ label start:
     # "[VFX" "Slowly fade to black, and then do a quick flash of white and bring back the visuals with a little shaking effect.]
     # Sad Theme]"
 
-    #Ame terrified?
-    "Ame terrified" "“That’s… that’s what you’re saying happened to the people I care about?”
+    show ame1 sad frown chestr sweatx
+    "Ame" "“That’s… that’s what you’re saying happened to the people I care about?”
     “No… no… I don’t… I don’t want to believe you…”"
 
     "Hina" "“But you do believe me. Because you know it’s true. We can’t send you back there.”"
 
     "Ame" "“I see… that damn plague.”"
 
-    #Ame curious?
-    "Ame curious" "“So the two of you… you just go around worlds chasing this plague? Fighting it?”"
+    show ame1 neutral chestr sparklex
+    "Ame" "“So the two of you… you just go around worlds chasing this plague? Fighting it?”"
 
     "Kai" "“There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter. Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do.”"
 
-    #Hina frustrated?
-    "Hina frustrated" "“Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
+    show hina1 angry grit angryx
+    "Hina" "“Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
 
     show hina1 sad frown
     "Hina" "“I seriously wish we could’ve saved your world, Ame. I’m so sorry.”"
@@ -267,8 +267,8 @@ label start:
 
     "Kai" "“Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?”"
 
-    #Hina thinking?
-    "Hina thinking" "“You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos.”"
+    show hina1 smile pointl
+    "Hina" "“You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos.”"
 
     "Hina" "“You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out whatever dreams you had.”"
 
@@ -283,30 +283,29 @@ label start:
 
     "Kai" "“No.”"
 
-    #Hina smirking?
-    "Hina smirking" "“Yeah, there is.”"
+    show hina1 smirk
+    "Hina" "“Yeah, there is.”"
 
-    #Kai angry?
-    "Kai angry" "“We are NOT sending them in there alone!”"
+    show kai1 angry frown behindl angryx
+    "Kai" "“We are NOT sending them in there alone!”"
 
-    #Hina winking?
     show hina1 wink smile
-    "Hina winking" "“They won’t be alone, they have my mind link.”"
+    "Hina" "“They won’t be alone, they have my mind link.”"
 
-    #Ame frustrated
-    "Ame frustrated" "“You two are talking like I’m not here again.”"
+    show ame1 angry grit angryx
+    "Ame" "“You two are talking like I’m not here again.”"
 
-    #Kai flustered
-    "Kai flustered" "“Oh, uh… sorry.”"
+    show kai1 worry nervous adjustr behindl dropsx
+    "Kai" "“Oh, uh… sorry.”"
 
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3"
 
-    #Hina smirking?
-    "Hina smirking" "“Ame, you want to help fight the war, right? How do you feel about giving us a little head start?”"
+    show hina1 smirk
+    "Hina" "“Ame, you want to help fight the war, right? How do you feel about giving us a little head start?”"
 
-    #Ame curious
-    "Ame curious" "“A head start?”"
+    show ame1 neutral chestr sparklex
+    "Ame" "“A head start?”"
 
     "Hina" "“We know what world Cole is hitting next. We may not be able to go ourselves, but you… you can make the trip quite easily.”"
 
