@@ -318,7 +318,7 @@ label start:
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3"
 
-    show hina smirk
+    show hina1 smirk
     "Hina" "Ame, you want to help fight the war, right? How do you feel about giving us a little head start?"
     
     show ame1 neutral chestr sparklex
