@@ -53,7 +53,7 @@ label start:
         linear 0.0 zoom 1.0 xanchor 0.35 yanchor 0.6
         linear 2.5 zoom 4.0 xanchor 0.35 yanchor 0.6
 
-    a "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
+    "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     # "[VFX" "{i}Bright ball of fire coming down from sky (use drop shadow to darken the background around the area of the blast).{/i} {i}Zoom in on one of the houses.{/i}]
     # Ame Universe – Indoors]
     # {i}big bang{/i}]
@@ -88,7 +88,7 @@ label start:
     h "Screw you!"
 
 
-    a "{i}Oi! I’m not a piece of furniture! Stop ignoring me! Why do I have to be here for this?!{/i}"
+    "{i}Oi! I’m not a piece of furniture! Stop ignoring me! Why do I have to be here for this?!{/i}"
 
     # "[VFX" "{i}shaking{/i}]
     with vpunch
@@ -96,7 +96,7 @@ label start:
 
     k "I’m sorry you got caught in the crossfire like this, young one…"
 
-    a "{i}I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy if I survive this…{/i}"
+    "{i}I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy if I survive this…{/i}"
 
     show cole1 blueangry with dissolve
     c "..."
@@ -112,6 +112,7 @@ label start:
     hide ame1
     show ame1 sad grit chestr chestl at center with dissolve
     a "Wait, the next life? No… please…"
+    stop music
     a "...I don't want to die."
 
     # "[VFX" "{i}light fills the screen{/i}]
@@ -129,13 +130,15 @@ label start:
 
     k "Not much we can do now… we’re stuck here for a while."
 
+    play music "audio/grandeur_theme.mp3"
+    
     h "Kai!!! You should be mad too! That kid just died because we couldn’t beat Cole!"
 
     k "I am! But– wait a minute…"
 
     # "[VFX" "{i}fade to CG1 – Hina and Kai looking at Ame, laying unconscious on the floor{/i}]
     # Building Grandeur Theme]"
-    play music "audio/grandeur_theme.mp3"
+    
 
     k "They’re here… but that’s impossible. I’ve never seen anything like this before."
 
@@ -153,7 +156,7 @@ label start:
     hide hina1
     show hina1 sweatx at left
     show ame1 side open dropsx at center
-    a "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
+    "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
 
     a "Is this Heaven?"
     # "[Stop Music]"
@@ -182,7 +185,7 @@ label start:
 
     h "I’m Hina, and this guy over here is Kai! You’re Ame, yeah? What an interesting name."
 
-    a "{i}At the very least, it doesn’t seem like these two want to kill me.{/i}"
+    "{i}At the very least, it doesn’t seem like these two want to kill me.{/i}"
 
     a "Thank you for reviving me. So… what exactly are you two?" 
     a"You aren’t normal, right? With all this divine energy and whatnot?"
@@ -209,7 +212,7 @@ label start:
     h "Uh oh, he’s mad."
 
     # "[Music" "Sad Theme]"
-    play music "audio/sad_theme.mp3"
+    play music "audio/sad_theme.mp3" fadeout 0.5 fadein 0.5
 
     show hina1 sad frown sweatx at left
     show ame1 sad grit chestr chestl at center
@@ -238,7 +241,11 @@ label start:
 
     k "I’m not sure you should do this… but I suppose you could form a mind link with Ame."
 
+    stop music
+
     a "A mind link?"
+
+    play music "audio/quirky_theme.mp3"
 
     k "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind!"
 
@@ -250,13 +257,16 @@ label start:
 
     a "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
 
-    a "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person. But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
+    "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person. But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
 
     h "It’s the only way I can show you what you want to see. It’s either this, or you don’t see it."
 
-    a "{i}I may not like the idea of having a stranger going through my mind, but…{/i}"
+    "{i}I may not like the idea of having a stranger going through my mind, but…{/i}"
+
 
     #Ame hesistant, what does she look like?
+    play music "audio/grandeur_theme.mp3" fadeout 0.5 fadein 0.5
+
     a "Alright...I need to know. I consent to the mind link. How does this work?"
 
     h "Well…"
@@ -271,10 +281,13 @@ label start:
 
     h "Well, I am the God of the Sun… now quiet down."
 
+    stop music
+
     a "..."
 
     # "[VFX" "Slowly fade to black, and then do a quick flash of white and bring back the visuals with a little shaking effect.]
     # Sad Theme]"
+    play music "audio/sad_theme.mp3"
 
     show ame1 sad frown chestr sweatx
     a "That’s… that’s what you’re saying happened to the people I care about?" 
@@ -283,11 +296,11 @@ label start:
 
     h "But you do believe me. Because you know it’s true. We can’t send you back there."
 
-    a "{i}If I wasn’t in front of people I don’t know, I’d be on the ground sobbing. Of all the possibilities I thought of, including the death of every single person in my home…{/i}"
+    "{i}If I wasn’t in front of people I don’t know, I’d be on the ground sobbing. Of all the possibilities I thought of, including the death of every single person in my home…{/i}"
     
-    a "{i}This is worse.{/i}"
+    "{i}This is worse.{/i}"
     
-    a "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
+    "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
 
     show ame1 neutral chestr sparklex
     a "So the two of you… you just go around worlds chasing this plague? Fighting it?"
@@ -304,12 +317,12 @@ label start:
 
     a "Don't apologize. It's not because of you"
 
-    a "{i}I’m not sure I can even process what’s going through my mind right now, but I do think I can trust these two…{/i}" 
+    "{i}I’m not sure I can even process what’s going through my mind right now, but I do think I can trust these two…{/i}" 
     
-    a "{i}I’m willing to give them grace and go along with them. They saved my life, after all.{/i}"
+    "{i}I’m willing to give them grace and go along with them. They saved my life, after all.{/i}"
 
     # "[Music" "Building Grandeur Theme]"
-    play music "audio/grandeur_theme.mp3"
+    play music "audio/grandeur_theme.mp3" fadein 0.5
 
     k "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
 
@@ -318,9 +331,9 @@ label start:
 
     h "You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out whatever dreams you had."
 
-    a "{i}That’s a pretty good deal I’m being offered. Almost too good to be true. Straight out of a fictional story where I’d get the opportunity to live the way I want.{/i}"
+    "{i}That’s a pretty good deal I’m being offered. Almost too good to be true. Straight out of a fictional story where I’d get the opportunity to live the way I want.{/i}"
 
-    a "{i}I spent so many nights dreaming about a chance to get that kind of life… of course I should take it. I really should. It makes no sense not to! But…{/i}"
+    "{i}I spent so many nights dreaming about a chance to get that kind of life… of course I should take it. I really should. It makes no sense not to! But…{/i}"
 
     a "...I can’t. I can’t restart my life and turn a blind eye to what happened in my world."
 
@@ -331,7 +344,9 @@ label start:
     # "[Music Stop]"
     stop music
 
-    k "“No.”"
+    k "No."
+
+    play music "audio/quirky_theme.mp3"
 
     show hina1 smirk
     h "Yeah, there is."
@@ -349,7 +364,7 @@ label start:
     k "Oh, uh… sorry."
 
     # "[Music" "Building Grandeur Theme]"
-    play music "audio/grandeur_theme.mp3"
+    play music "audio/grandeur_theme.mp3" fadein 0.5
 
     show hina1 smirk
     h "Ame, you want to help fight the war, right? How do you feel about giving us a little head start?"
@@ -371,16 +386,17 @@ label start:
     "{i}This is like watching two kids fight over who gets to play with a toy… but why am I the toy???{/i}"
 
     # "[Music" "Continue]"
+    play music "audio/grandeur_theme.mp3"
 
     h "Anyway, the more time we waste, the less time you have to make a change. Decide, Ame. Hurry up now."
 
-    a "{i}This is all coming so fast, I don’t know what I’m meant to do… let’s just slow this down.{/i}"
+    "{i}This is all coming so fast, I don’t know what I’m meant to do… let’s just slow this down.{/i}"
 
     a "...ok, I’ll–"
 
     h "Alright!"
 
-    a "{i}Heh??????{/i}"
+    "{i}Heh??????{/i}"
 
     k "Wait!--"
 
