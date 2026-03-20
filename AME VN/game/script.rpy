@@ -1,14 +1,10 @@
 ﻿# Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define cole = Character("Cole")
-define ame = Character("Ame")
-define hina = Character("Hina")
-
 # The game starts here.
 
 label start:
-    play music "audio/battle_theme.mp3"
+    play music "audio/beatdown.mp3"
 
     "I knew something strange was happening. It was impossible not to notice."
 
@@ -24,12 +20,12 @@ label start:
 
     show hina1 sweatx at left with dissolve
 
-    "Hina" "How?! Kai, how did he get so strong? I thought we kept him in check this time!"
+    h "How?! Kai, how did he get so strong? I thought we kept him in check this time!"
 
     # "[Kai, adjusting his glasses, appears]"
     show kai1 adjustr behindl at right with dissolve
 
-    "Kai" "I tracked all of his movements ever since we arrived here. There is no justification."
+    k "I tracked all of his movements ever since we arrived here. There is no justification."
 
     # "[VFX" "{i}shaking{/i}]
     # {i}rumbling{/i}]
@@ -39,14 +35,14 @@ label start:
     play sound "audio/rumble.mp3"
     show cole1 at center with dissolve
     
-    "Cole" "..."
+    c "..."
     hide cole1
     hide hina1
     hide kai1
     show flash:
         alpha 0.0
-        linear 0.75 alpha 1.0   # snap bright
-        linear 0.75 alpha 0.0   # fade out
+        linear 0.75 alpha 1.0  
+        linear 0.75 alpha 0.0   
     pause 1.5
     show scorch_mark:
         alpha 0.0
@@ -56,7 +52,8 @@ label start:
         xpos 0.35 ypos 0.7
         linear 0.0 zoom 1.0 xanchor 0.35 yanchor 0.6
         linear 2.5 zoom 4.0 xanchor 0.35 yanchor 0.6
-    pause
+
+    a "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     # "[VFX" "{i}Bright ball of fire coming down from sky (use drop shadow to darken the background around the area of the blast).{/i} {i}Zoom in on one of the houses.{/i}]
     # Ame Universe – Indoors]
     # {i}big bang{/i}]
@@ -68,8 +65,8 @@ label start:
     show kai1 worry adjustr behindl sweatx at center with dissolve
     show ame1 sad grit chestr chestl sweatx at right with dissolve
     
-    "Ame" "Heh…? Uh… Uh… oh god…" 
-    "Ame" "You guys couldn’t keep this outside?"
+    a "Heh…? Uh… Uh… oh god…" 
+    a "You guys couldn’t keep this outside?"
     # "[VFX" "{i}Cole moves in from the left, Hina and Kai come in front of Ame on the right side of the screen. Switch Hina to a nervous expression.{/i}]"
 
     show hina1 angry grit angryx pointl zorder 3 with dissolve:
@@ -82,38 +79,40 @@ label start:
     show cole1 with dissolve:
         xalign -0.1
 
-    "Cole" "You two refuse to die… such a pitiful struggle."
+    c "You two refuse to die… such a pitiful struggle."
 
-    "Ame" "Die?! Huh? If you want to kill each other, get out of my house first!"
+    a "Die?! Huh? If you want to kill each other, get out of my house first!"
 
-    "Cole" "Oh well… time to finish up."
+    c "Oh well… time to finish up."
 
-    "Hina" "Screw you!"
+    h "Screw you!"
 
-    "Ame" "Oi! I’m not a piece of furniture! Stop ignoring me!"
+
+    a "{i}Oi! I’m not a piece of furniture! Stop ignoring me! Why do I have to be here for this?!{/i}"
 
     # "[VFX" "{i}shaking{/i}]
     with vpunch
     # {i}rumbling{/i}]"
 
-    "Kai" "I’m sorry you got caught in the crossfire like this, young one…"
+    k "I’m sorry you got caught in the crossfire like this, young one…"
 
-    "Ame" "I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy…"
+    a "{i}I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy if I survive this…{/i}"
 
     show cole1 blueangry with dissolve
-    "Cole" "..."
+    c "..."
 
     # "[VFX" "{i}shaking intensifies{/i}]"
     with vpunch 
 
-    "Hina" "I’m sorry, kid… I didn’t mean to drag you and your home into this mess. I’m so, so sorry… I hope the next life is kind to you."
+    h "I’m sorry, kid… I didn’t mean to drag you and your home into this mess. I’m so, so sorry… I hope the next life is kind to you."
 
     hide hina1 
     hide kai1
     hide cole1
     hide ame1
     show ame1 sad grit chestr chestl at center with dissolve
-    "Ame" "Wait, the next life? No… please…"
+    a "Wait, the next life? No… please…"
+    a "...I don't want to die."
 
     # "[VFX" "{i}light fills the screen{/i}]
     # {i}music stops{/i}]"
@@ -124,80 +123,90 @@ label start:
 
     show hina1 angry grit angryx pointl at left with dissolve
 
-    "Hina" "Another world… gone… AHHHHH! We keep losing! Why? Why? Why?!!!!!"
+    h "Another world… gone… AHHHHH! We keep losing! Why? Why? Why?!!!!!"
 
     show kai1 worry frown adjustr behindl sweatx at right with dissolve
 
-    "Kai" "Not much we can do now… we’re stuck here for a while."
+    k "Not much we can do now… we’re stuck here for a while."
 
-    "Hina" "Kai!!! You should be mad too! That kid just died because we couldn’t beat Cole!"
+    h "Kai!!! You should be mad too! That kid just died because we couldn’t beat Cole!"
 
-    "Kai" "I am! But– wait a minute…"
+    k "I am! But– wait a minute…"
 
     # "[VFX" "{i}fade to CG1 – Hina and Kai looking at Ame, laying unconscious on the floor{/i}]
     # Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3"
 
-    "Kai" "They’re here… but that’s impossible. I’ve never seen anything like this before."
+    k "They’re here… but that’s impossible. I’ve never seen anything like this before."
 
-    "Hina" "That doesn’t matter! We need to help them!"
+    h "That doesn’t matter! We need to help them!"
 
-    "Kai" "I can wake them up."
+    k "I can wake them up."
 
     # "[VFX" "Low, pulsing glow]
+    show flash:
+        alpha 0.0
+        linear 0.75 alpha 1.0  
+        linear 0.75 alpha 0.0   
     # [Spirit Realm Background with Hina (nervous), Kai (calm), and Ame (confused)]"
     
     hide hina1
     show hina1 sweatx at left
     show ame1 side open dropsx at center
-    "Ame" "Where… where am I? I was at my house… and the wall broke, and… and… there were three people… what happened? Didn’t I… didn’t I die? Is this Heaven?"
+    a "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
 
+    a "Is this Heaven?"
     # "[Stop Music]"
     stop music
 
-    "Kai" "This isn’t Heaven. It’s the Spirit Realm. Hina and I live here while building up power. It’s a waiting room, essentially. As for what happened…"
+    k "This isn’t Heaven. It’s the Spirit Realm. Hina and I live here while building up power. It’s a waiting room, essentially. As for what happened…"
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
     show hina1 smile sparklex at left
 
-    "Hina" "YOU’RE ALIVE!"
+    h "YOU’RE ALIVE!"
 
     # "[Music" "Quirky Theme]"
     play music "audio/quirky_theme.mp3"
 
     show ame1 smile sparklex
 
-    "Ame" "I’m alive? Thank god… after that guy told me it wasn’t Heaven, I was afraid it was the other place."
+    a "I’m alive? Thank god… after that guy told me it wasn’t Heaven, I was afraid it was the other place."
 
     show kai1 adjustr at right
 
-    "Kai" "Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?"
+    k "Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?"
 
-    "Ame" "I’m Ame… you two are… Hina and Kai, right?"
+    a "I’m Ame… you two are…"
 
-    "Hina" "Bingo! Good job paying attention! You’re Ame, huh? What an interesting name."
+    h "I’m Hina, and this guy over here is Kai! You’re Ame, yeah? What an interesting name."
 
-    "Ame" "Thank you for reviving me. So… what exactly are you two? You aren’t normal, right? With all this divine energy and whatnot?"
+    a "{i}At the very least, it doesn’t seem like these two want to kill me.{/i}"
+
+    a "Thank you for reviving me. So… what exactly are you two?" 
+    a"You aren’t normal, right? With all this divine energy and whatnot?"
 
     show hina1 tongue sparklex at left
 
-    "Hina" "I’m perfectly normal, thank you very much!"
+    h "I’m perfectly normal, thank you very much!"
 
     show kai1 adjustr behindl at right
 
-    "Kai" "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world."
+    k "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world"
+
+    k "The other person you saw, Cole, is responsible for spreading it."
 
     show hina1 angry grit angryx pointl at left
 
-    "Hina" "That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!"
+    h "That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!"
 
     show kai1 frown
-    "Kai annoyed" "“That’s quite enough, Hina.”"
+    k "That’s quite enough, Hina."
 
     hide hina1
     show hina1 smirk at left
-    "Hina" "Uh oh, he’s mad."
+    h "Uh oh, he’s mad."
 
     # "[Music" "Sad Theme]"
     play music "audio/sad_theme.mp3"
@@ -205,130 +214,156 @@ label start:
     show hina1 sad frown sweatx at left
     show ame1 sad grit chestr chestl at center
 
-    "Ame" "Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?"
+    a "Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?"
 
-    "Hina" "Something like that… pretty close."
+    h "Something like that… pretty close."
 
-    "Ame" "Pretty close… meaning they’re not dead. Could you send me back? You’re gods, right? You were able to bring me back to life. Can you put me back in my world?"
+    a "Pretty close… meaning they’re not dead. Could you send me back? You’re gods, right?" 
+    a "You were able to bring me back to life. Can you put me back in my world?"
 
-    "Kai" "That’s… that’s not possible. I’m really sorry, Ame, but even if we could send you back… you wouldn’t want to see it."
+    k "That’s… that’s not possible. I’m really sorry, Ame, but even if we could send you back… you wouldn’t want to see it."
 
-    "Ame" "I need to know. I can’t… I can’t just not know what happened to them."
+    a "I need to know. I can’t… I can’t just not know what happened to them."
 
-    "Hina" "I understand…"
+    h "I understand…"
 
     # "[VFX" "Move Hina closer to Ame]
     show hina1 sad frown sweatx at left with move:
         xalign 0.1
     # General Conversation]"
 
-    "Kai" "What are you doing, Hina? Don’t tell me you’re actually going to show them…?"
+    k "What are you doing, Hina? Don’t tell me you’re actually going to show them…?"
 
-    "Hina" "They deserve to know. It’s the least we can do considering we’re the reason why they can’t be amongst the people they care about."
+    h "They deserve to know. It’s the least we can do considering we’re the reason why they can’t be amongst the people they care about."
 
-    "Kai" "I’m not sure you should do this… but I suppose you could form a mind link with Ame."
+    k "I’m not sure you should do this… but I suppose you could form a mind link with Ame."
 
-    "Ame" "A mind link?"
+    a "A mind link?"
 
-    "Kai" "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind! Well… I guess she is kind of rash, but her heart’s usually in the right place! But I guess…"
+    k "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind!"
 
-    "Hina" "Kai, shut up!"
+    k "Well… I guess she is kind of rash, but her heart’s usually in the right place! But I guess…"
 
-    "Hina" "Ahem… The mind link will let me show you what happens to dimensions taken over by that plague. It can also do other things, but I won’t abuse it. You have my word."
+    h "Kai, shut up!"
 
-    "Ame" "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
+    h "Ahem… The mind link will let me show you what happens to dimensions taken over by that plague. It can also do other things, but I won’t abuse it. You have my word."
 
-    "Hina" "It’s the only way I can show you what you want to see. It’s either this, or you don’t see it."
+    a "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
+
+    a "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person. But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
+
+    h "It’s the only way I can show you what you want to see. It’s either this, or you don’t see it."
+
+    a "{i}I may not like the idea of having a stranger going through my mind, but…{/i}"
 
     #Ame hesistant, what does she look like?
-    "Ame" "Alright...I need to know. I consent to the mind link. How does this work?"
+    a "Alright...I need to know. I consent to the mind link. How does this work?"
 
-    "Hina" "Well…"
+    h "Well…"
 
     # "[VFX" "Insert CG 2 (Hina and Ame holding hands)]"
 
-    "Ame" "Heh?!"
+    a "Heh?!"
 
-    "Hina" "I need to focus."
+    h "I need to focus."
 
-    "Ame" "It’s a little warm…"
+    a "It’s a little warm…"
 
-    "Hina" "Well, I am the God of the Sun… now quiet down."
+    h "Well, I am the God of the Sun… now quiet down."
 
-    "Ame" "..."
+    a "..."
 
     # "[VFX" "Slowly fade to black, and then do a quick flash of white and bring back the visuals with a little shaking effect.]
     # Sad Theme]"
 
     show ame1 sad frown chestr sweatx
-    "Ame" "“That’s… that’s what you’re saying happened to the people I care about?”
-    “No… no… I don’t… I don’t want to believe you…”"
+    a "That’s… that’s what you’re saying happened to the people I care about?" 
 
-    "Hina" "But you do believe me. Because you know it’s true. We can’t send you back there."
+    a "No… no… I don’t… I don’t want to believe you…"
 
-    "Ame" "I see… that damn plague."
+    h "But you do believe me. Because you know it’s true. We can’t send you back there."
+
+    a "{i}If I wasn’t in front of people I don’t know, I’d be on the ground sobbing. Of all the possibilities I thought of, including the death of every single person in my home…{/i}"
+    
+    a "{i}This is worse.{/i}"
+    
+    a "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
 
     show ame1 neutral chestr sparklex
-    "Ame" "So the two of you… you just go around worlds chasing this plague? Fighting it?"
+    a "So the two of you… you just go around worlds chasing this plague? Fighting it?"
 
-    "Kai" "There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter. Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do."
+    k "There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter." 
+    
+    k "Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do."
 
     show hina1 angry grit angryx
-    "Hina" "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
+    h "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
 
     show hina1 sad frown
-    "Hina" "I seriously wish we could’ve saved your world, Ame. I’m so sorry."
+    h "I seriously wish we could’ve saved your world, Ame. I’m so sorry."
+
+    a "Don't apologize. It's not because of you"
+
+    a "{i}I’m not sure I can even process what’s going through my mind right now, but I do think I can trust these two…{/i}" 
+    
+    a "{i}I’m willing to give them grace and go along with them. They saved my life, after all.{/i}"
 
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3"
 
-    "Kai" "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
+    k "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
 
     show hina1 smile pointl
-    "Hina" "You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos."
+    h "You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos."
 
-    "Hina" "You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out whatever dreams you had."
+    h "You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out whatever dreams you had."
 
-    "Ame" "...I can’t. I can’t restart my life and turn a blind eye to what happened in my world."
+    a "{i}That’s a pretty good deal I’m being offered. Almost too good to be true. Straight out of a fictional story where I’d get the opportunity to live the way I want.{/i}"
 
-    "Kai" "Huh? Ok… well… what are you going to do then? Staying here won’t do anything."
+    a "{i}I spent so many nights dreaming about a chance to get that kind of life… of course I should take it. I really should. It makes no sense not to! But…{/i}"
 
-    "Ame" "Well… is there anything I {i}can{/i} do to help?"
+    a "...I can’t. I can’t restart my life and turn a blind eye to what happened in my world."
+
+    k "Huh? Ok… well… what are you going to do then? Staying here won’t do anything."
+
+    a "Well… is there anything I {i}can{/i} do to help?"
 
     # "[Music Stop]"
     stop music
 
-    "Kai" "“No.”"
+    k "“No.”"
 
-    show hina smirk
-    "Hina" "Yeah, there is."
+    show hina1 smirk
+    h "Yeah, there is."
 
     show kai1 angry frown behindl angryx
-    "Kai" "We are NOT sending them in there alone!"
+    k "We are NOT sending them in there alone!"
 
     show hina1 wink smile
-    "Hina" "They won’t be alone, they have my mind link."
+    h "They won’t be alone, they have my mind link."
 
     show ame1 angry grit angryx
-    "Ame" "You two are talking like I’m not here again."
+    a "You two are talking like I’m not here again."
 
     show kai1 worry nervous adjustr behindl dropsx
-    "Kai" "Oh, uh… sorry."
+    k "Oh, uh… sorry."
 
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3"
 
     show hina1 smirk
-    "Hina" "Ame, you want to help fight the war, right? How do you feel about giving us a little head start?"
+    h "Ame, you want to help fight the war, right? How do you feel about giving us a little head start?"
     
     show ame1 neutral chestr sparklex
-    "Ame" "A head start?"
+    a "A head start?"
 
-    "Hina" "We know what world Cole is hitting next. We may not be able to go ourselves, but you… you can make the trip quite easily."
+    h "We know what world Cole is hitting next. We may not be able to go ourselves, but you… you can make the trip quite easily."
 
-    "Kai" "We know literally nothing about the world that we’d be sending you into."
+    k "We know literally nothing about the world that we’d be sending you into."
 
-    "Hina" "But we can learn via your mind link contract with me! It’ll allow us to communicate, even across dimensions! If we have intel and somebody working on countering the plague before we arrive, we’ll be far more equipped to take care of Cole in this world!"
+    h "But we can learn via your mind link contract with me! It’ll allow us to communicate, even across dimensions!"
+
+    h "If we have intel and somebody working on countering the plague before we arrive, we’ll be far more equipped to take care of Cole in this world!"
 
     # "[Music" "Stop]"
     stop music
@@ -337,15 +372,19 @@ label start:
 
     # "[Music" "Continue]"
 
-    "Hina" "Anyway, the more time we waste, the less time you have to make a change. Decide, Ame. Hurry up now."
+    h "Anyway, the more time we waste, the less time you have to make a change. Decide, Ame. Hurry up now."
 
-    "Ame" "...ok, I’ll–"
+    a "{i}This is all coming so fast, I don’t know what I’m meant to do… let’s just slow this down.{/i}"
 
-    "Hina" "Alright!"
+    a "...ok, I’ll–"
 
-    "Kai" "Wait!--"
+    h "Alright!"
+
+    a "{i}Heh??????{/i}"
+
+    k "Wait!--"
 
     # "[aggressively flick the background and quickly have Ame fly toward a portal that appears.]"
 
-    "Hina" "Stay in touch! Talk to you soon!"
+    h "Stay in touch! Talk to you soon!"
 return
