@@ -1,7 +1,44 @@
 ﻿# Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-# The game starts here.
+
+
+
+# declaring animation presets
+
+transform quick_jump:
+    yoffset 0
+    zoom 1.0
+    linear 0.08 yoffset -40 zoom 1.04
+    linear 0.08 yoffset 0 zoom 1.0
+
+transform descend_from_top:
+    yoffset -500
+    alpha 0.0
+    linear 0.40 yoffset 0 alpha 1.0
+
+transform tossed_into_portal_right:
+    xoffset 0
+    yoffset 0
+    rotate 0
+    zoom 1.0
+    alpha 1.0
+    linear 0.04 xoffset -20 rotate -4
+    linear 0.20 xoffset 900 yoffset -120 rotate 16 zoom 0.85 alpha 0.0
+
+define whiteflash = Fade(0.05, 0.0, 0.20, color="#ffffff")
+
+transform shake_hard:
+    xoffset 0
+    yoffset 0
+    linear 0.02 xoffset -16 yoffset 6
+    linear 0.02 xoffset 16 yoffset -6
+    linear 0.02 xoffset -12 yoffset 4
+    linear 0.02 xoffset 12 yoffset -4
+    linear 0.02 xoffset 0 yoffset 0
+
+
+# Game starts here
 
 label start:
     play music "audio/beatdown.mp3"
@@ -33,7 +70,7 @@ label start:
 
     with vpunch
     play sound "audio/rumble.mp3"
-    show cole1 at center with dissolve
+    show cole1 at center, descend_from_top
     
     c "..."
     hide cole1
@@ -59,19 +96,20 @@ label start:
     # {i}big bang{/i}]
     # {i}fade Ame’s destroyed house with Ame (scared expression, right side of screen), Hina (angry expression, left side of screen), and Kai (nervous expression, next to Hina){/i}]"
     
-    scene bg indoors with fade
+    scene bg indoors with whiteflash
 
-    show hina1 angry grit angryx pointl at left with dissolve
-    show kai1 worry adjustr behindl sweatx at center with dissolve
-    show ame1 sad grit chestr chestl sweatx at right with dissolve
+    show hina1 angry grit angryx pointl at left, descend_from_top
+    show kai1 worry adjustr behindl sweatx at center, descend_from_top
+    show ame1 sad grit chestr chestl sweatx at right with dissolve:
+        xalign 0.8
     
     a "Heh…? Uh… Uh… oh god…" 
     a "You guys couldn’t keep this outside?"
     # "[VFX" "{i}Cole moves in from the left, Hina and Kai come in front of Ame on the right side of the screen. Switch Hina to a nervous expression.{/i}]"
 
-    show hina1 angry grit angryx pointl zorder 3 with dissolve:
+    show hina1 angry grit angryx pointl zorder 3 with MoveTransition(0.25):
         xalign 0.6
-    show kai1 worry adjustr behindl sweatx zorder 2 with dissolve:
+    show kai1 worry adjustr behindl sweatx zorder 2 with MoveTransition(0.25):
         xalign 1.0
     show ame1 sad grit chestr chestl sweatx with dissolve:
         xalign 0.8
@@ -131,7 +169,7 @@ label start:
     k "Not much we can do now… we’re stuck here for a while."
 
     play music "audio/grandeur_theme.mp3"
-    
+
     h "Kai!!! You should be mad too! That kid just died because we couldn’t beat Cole!"
 
     k "I am! But– wait a minute…"
@@ -166,7 +204,7 @@ label start:
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
-    show hina1 smile sparklex at left
+    show hina1 smile sparklex at left, quick_jump
 
     h "YOU’RE ALIVE!"
 
@@ -209,6 +247,7 @@ label start:
 
     hide hina1
     show hina1 smirk at left
+    stop music
     h "Uh oh, he’s mad."
 
     # "[Music" "Sad Theme]"
@@ -273,13 +312,19 @@ label start:
 
     # "[VFX" "Insert CG 2 (Hina and Ame holding hands)]"
 
+    scene cg2_hinaame1 with dissolve
+
     a "Heh?!"
 
     h "I need to focus."
 
+    scene cg2_hinaame2 with dissolve
+
     a "It’s a little warm…"
 
     h "Well, I am the God of the Sun… now quiet down."
+
+    scene cg2_hinaame3 with dissolve
 
     stop music
 
@@ -289,7 +334,7 @@ label start:
     # Sad Theme]"
     play music "audio/sad_theme.mp3"
 
-    show ame1 sad frown chestr sweatx
+    
     a "That’s… that’s what you’re saying happened to the people I care about?" 
 
     a "No… no… I don’t… I don’t want to believe you…"
@@ -302,27 +347,31 @@ label start:
     
     "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
 
+    scene bg spirit_realm with dissolve
+
+    # "[Music" "Building Grandeur Theme]"
+    play music "audio/grandeur_theme.mp3" fadein 0.5
+
     show ame1 neutral chestr sparklex
     a "So the two of you… you just go around worlds chasing this plague? Fighting it?"
+
+    show kai1 adjustr behindl at right
 
     k "There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter." 
     
     k "Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do."
 
-    show hina1 angry grit angryx
+    show hina1 angry grit angryx at left
     h "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
 
     show hina1 sad frown
     h "I seriously wish we could’ve saved your world, Ame. I’m so sorry."
 
-    a "Don't apologize. It's not because of you"
+    a "Don't apologize. It's not because of you."
 
     "{i}I’m not sure I can even process what’s going through my mind right now, but I do think I can trust these two…{/i}" 
     
     "{i}I’m willing to give them grace and go along with them. They saved my life, after all.{/i}"
-
-    # "[Music" "Building Grandeur Theme]"
-    play music "audio/grandeur_theme.mp3" fadein 0.5
 
     k "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
 
@@ -396,11 +445,17 @@ label start:
 
     h "Alright!"
 
+    scene bg spirit_realm_portal with whiteflash
+    show ame1 neutral chestr sparklex at center
+    show hina1 smirk at left
+    show kai1 worry nervous adjustr behindl dropsx at right
+    with whiteflash
     "{i}Heh??????{/i}"
 
     k "Wait!--"
 
     # "[aggressively flick the background and quickly have Ame fly toward a portal that appears.]"
-
+    show hina1 smirk at left, quick_jump
+    show ame1 side grit chestr dropsx at center, tossed_into_portal_right
     h "Stay in touch! Talk to you soon!"
 return
