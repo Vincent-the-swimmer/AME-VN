@@ -37,9 +37,135 @@ transform shake_hard:
     linear 0.02 xoffset 12 yoffset -4
     linear 0.02 xoffset 0 yoffset 0
 
+# Fireball
+
+transform slow_house_zoom:
+    zoom 1.0
+    xalign 0.5
+    yalign 0.5
+    linear 0.7 zoom 1.08
+
+
+transform fireball_trail(
+    start_x=0.82,
+    start_y=-0.56,
+    end_x=-0.06,
+    end_y=0.42,
+    start_zoom=0.55,
+    end_zoom=1.55,
+    start_rot=34,
+    end_rot=34,
+    fade_in=0.03,
+    travel_time=0.78
+):
+    xpos start_x
+    ypos start_y
+    zoom start_zoom
+    rotate start_rot
+    alpha 0.0
+
+    parallel:
+        linear fade_in alpha 1.0
+
+    parallel:
+        easein_quad travel_time xpos end_x ypos end_y zoom end_zoom rotate end_rot
+
+transform bg_darken_in:
+    alpha 0.0
+    linear 0.05 alpha 0.10
+    linear 0.07 alpha 0.16
+    linear 0.06 alpha 0.0
+
+
+screen fireball_darkening():
+    zorder 90
+    add Solid("#ffb35a") at bg_darken_in
+
+
+screen fireball():
+    zorder 100
+
+    fixed:
+        at fireball_trail(
+        start_x=0.82,
+        start_y=-0.56,
+        end_x=-0.06,
+        end_y=0.42,
+        start_zoom=0.34,
+        end_zoom=1.40,
+        start_rot=34,
+        end_rot=34,
+        fade_in=0.03,
+        travel_time=0.75
+)
+
+        # far outer tail glow (upper-right)
+        text "●":
+            xpos 150
+            ypos -210
+            size 150
+            color "#ff5a0018"
+
+        text "●":
+            xpos 120
+            ypos -165
+            size 135
+            color "#ff6a0022"
+
+        text "●":
+            xpos 92
+            ypos -126
+            size 120
+            color "#ff7a0030"
+
+        text "●":
+            xpos 68
+            ypos -92
+            size 108
+            color "#ff8a0044"
+
+        # mid tail
+        text "●":
+            xpos 48
+            ypos -62
+            size 96
+            color "#ff980066"
+
+        text "●":
+            xpos 30
+            ypos -38
+            size 84
+            color "#ffb02088"
+
+        # body glow
+        text "●":
+            xpos 14
+            ypos -18
+            size 94
+            color "#ff6a0038"
+
+        # main body
+        text "●":
+            xpos 0
+            ypos 0
+            size 78
+            color "#ff9d00dd"
+
+        # bright inner body
+        text "●":
+            xpos 6
+            ypos 6
+            size 58
+            color "#ffd15acc"
+
+        # hot core
+        text "●":
+            xpos 14
+            ypos 14
+            size 36
+            color "#fff4cc"
 
 # Game starts here
-
 label start:
     play music "audio/beatdown.mp3"
 
@@ -61,7 +187,6 @@ label start:
 
     # "[Kai, adjusting his glasses, appears]"
     show kai1 adjustr behindl at right with dissolve
-
     k "I tracked all of his movements ever since we arrived here. There is no justification."
 
     # "[VFX" "{i}shaking{/i}]
@@ -76,21 +201,15 @@ label start:
     hide cole1
     hide hina1
     hide kai1
-    show flash:
-        alpha 0.0
-        linear 0.75 alpha 1.0  
-        linear 0.75 alpha 0.0   
-    pause 1.5
-    show scorch_mark:
-        alpha 0.0
-        linear 0.3 alpha 1.0
-    pause
-    show bg neighborhood:
-        xpos 0.35 ypos 0.7
-        linear 0.0 zoom 1.0 xanchor 0.35 yanchor 0.6
-        linear 2.5 zoom 4.0 xanchor 0.35 yanchor 0.6
-
+    scene bg neighborhood at slow_house_zoom
+    show screen fireball_darkening
     "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
+    show screen fireball
+    pause 0.70
+    hide screen fireball
+    hide screen fireball_darkening
+    scene bg neighborhood with Fade(0.03, 0.0, 0.18, color="#ffcc88")
+    scene bg indoors with hpunch
     # "[VFX" "{i}Bright ball of fire coming down from sky (use drop shadow to darken the background around the area of the blast).{/i} {i}Zoom in on one of the houses.{/i}]
     # Ame Universe – Indoors]
     # {i}big bang{/i}]
@@ -114,8 +233,8 @@ label start:
     show ame1 sad grit chestr chestl sweatx with dissolve:
         xalign 0.8
 
-    show cole1 with dissolve:
-        xalign -0.1
+    show cole1:
+        xalign -0.1, descend_from_top
 
     c "You two refuse to die… such a pitiful struggle."
 
