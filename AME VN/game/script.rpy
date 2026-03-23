@@ -70,16 +70,22 @@ transform fireball_trail(
     parallel:
         easein_quad travel_time xpos end_x ypos end_y zoom end_zoom rotate end_rot
 
+
 transform bg_darken_in:
     alpha 0.0
-    linear 0.05 alpha 0.10
-    linear 0.07 alpha 0.16
-    linear 0.06 alpha 0.0
+    linear 0.20 alpha 0.12
+    linear 0.30 alpha 0.24
+    linear 0.25 alpha 0.34
 
 
 screen fireball_darkening():
     zorder 90
-    add Solid("#ffb35a") at bg_darken_in
+
+    # Main dimming layer: translucent, not opaque.
+    add Solid("#000000") at bg_darken_in
+
+    # Very subtle warm tint so it doesn't feel like a plain fade-to-black.
+    add Solid("#2a1200") at bg_darken_in
 
 
 screen fireball():
@@ -87,19 +93,18 @@ screen fireball():
 
     fixed:
         at fireball_trail(
-        start_x=0.82,
-        start_y=-0.56,
-        end_x=-0.06,
-        end_y=0.42,
-        start_zoom=0.34,
-        end_zoom=1.40,
-        start_rot=34,
-        end_rot=34,
-        fade_in=0.03,
-        travel_time=0.75
-)
+            start_x=0.82,
+            start_y=-0.56,
+            end_x=-0.06,
+            end_y=0.42,
+            start_zoom=0.34,
+            end_zoom=1.40,
+            start_rot=34,
+            end_rot=34,
+            fade_in=0.03,
+            travel_time=0.75
+        )
 
-        # far outer tail glow (upper-right)
         text "●":
             xpos 150
             ypos -210
@@ -124,7 +129,6 @@ screen fireball():
             size 108
             color "#ff8a0044"
 
-        # mid tail
         text "●":
             xpos 48
             ypos -62
@@ -137,28 +141,24 @@ screen fireball():
             size 84
             color "#ffb02088"
 
-        # body glow
         text "●":
             xpos 14
             ypos -18
             size 94
             color "#ff6a0038"
 
-        # main body
         text "●":
             xpos 0
             ypos 0
             size 78
             color "#ff9d00dd"
 
-        # bright inner body
         text "●":
             xpos 6
             ypos 6
             size 58
             color "#ffd15acc"
 
-        # hot core
         text "●":
             xpos 14
             ypos 14
@@ -167,7 +167,7 @@ screen fireball():
 
 # Game starts here
 label start:
-    play music "audio/beatdown.mp3"
+    
 
     "I knew something strange was happening. It was impossible not to notice."
 
@@ -177,6 +177,7 @@ label start:
 
     "Because the sight I’m seeing outside my window… THAT is definitely not normal."
 
+    play music "audio/beatdown.mp3"
     play sound "audio/bang.mp3"
     play sound "audio/rumble.mp3"
     show bg neighborhood with vpunch
@@ -353,7 +354,7 @@ label start:
 
     show kai1 adjustr behindl at right
 
-    k "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world"
+    k "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world."
 
     k "The other person you saw, Cole, is responsible for spreading it."
 
@@ -443,7 +444,10 @@ label start:
 
     h "Well, I am the God of the Sun… now quiet down."
 
-    scene cg2_hinaame3 with dissolve
+    scene cg2_hinaame2 with whiteflash
+    scene cg2_hinaame2 with whiteflash
+
+    scene cg2_hinaame3 with whiteflash
 
     stop music
 
