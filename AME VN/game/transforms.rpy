@@ -15,15 +15,3 @@ transform active:
 
 transform inactive:
     linear 0.2 matrixcolor BrightnessMatrix(-0.35)
-
-define a = Character("Ame",
-    callback=lambda event, **kw: dim_others("ame1", event, **kw))
-
-define k = Character("Kai",
-    callback=lambda event, **kw: dim_others("kai1", event, **kw))
-
-define c = Character("Cole",
-    callback=lambda event, **kw: dim_others("cole1", event, **kw))
-
-define h = Character("Hina",
-    callback=lambda event, **kw: dim_others("hina1", event, **kw))

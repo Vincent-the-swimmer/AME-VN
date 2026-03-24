@@ -1,5 +1,6 @@
 #Hina Sprites
 layeredimage hina1:
+    at sprite_highlight('hina1')
     #base
     always "hina1_base"
 
@@ -39,6 +40,7 @@ layeredimage hina1:
 
 #Cole Sprites
 layeredimage cole1:
+    at sprite_highlight('cole1')
     #base
     always "cole1_base"
 
@@ -74,6 +76,7 @@ layeredimage cole1:
 #Ame Sprites
 
 layeredimage ame1:
+    at sprite_highlight('ame1')
     #base
     always "ame1_base"
 
@@ -113,6 +116,7 @@ layeredimage ame1:
 #Kai Sprites
 
 layeredimage kai1:
+    at sprite_highlight('kai1')
     #base
     always "kai1_base"
 
@@ -152,6 +156,7 @@ layeredimage kai1:
 #Sixth Sprites
 
 layeredimage sixth1:
+    at sprite_highlight('sixth1')
     #base
     always "sixth1_base"
 
