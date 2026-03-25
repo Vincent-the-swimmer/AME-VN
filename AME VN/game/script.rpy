@@ -177,9 +177,11 @@ label start:
 
     "Because the sight I’m seeing outside my window… THAT is definitely not normal."
 
-    play music "audio/beatdown.mp3"
     play sound "audio/bang.mp3"
+    pause 4
     play sound "audio/rumble.mp3"
+    pause 3
+    play music "audio/beatdown.mp3"
     show bg neighborhood with vpunch
 
     show hina1 sweatx at left with dissolve
@@ -206,6 +208,8 @@ label start:
     show screen fireball_darkening
     "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     show screen fireball
+    play sound "audio/bang.mp3"
+    pause 4
     pause 0.70
     hide screen fireball
     hide screen fireball_darkening
