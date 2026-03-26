@@ -1,174 +1,5 @@
-﻿# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-
-
-
-# declaring animation presets
-
-transform quick_jump:
-    yoffset 0
-    zoom 1.0
-    linear 0.08 yoffset -40 zoom 1.04
-    linear 0.08 yoffset 0 zoom 1.0
-
-transform descend_from_top:
-    yoffset -500
-    alpha 0.0
-    linear 0.40 yoffset 0 alpha 1.0
-
-transform tossed_into_portal_right:
-    xoffset 0
-    yoffset 0
-    rotate 0
-    zoom 1.0
-    alpha 1.0
-    linear 0.04 xoffset -20 rotate -4
-    linear 0.20 xoffset 900 yoffset -120 rotate 16 zoom 0.85 alpha 0.0
-
-define whiteflash = Fade(0.05, 0.0, 0.20, color="#ffffff")
-
-transform shake_hard:
-    xoffset 0
-    yoffset 0
-    linear 0.02 xoffset -16 yoffset 6
-    linear 0.02 xoffset 16 yoffset -6
-    linear 0.02 xoffset -12 yoffset 4
-    linear 0.02 xoffset 12 yoffset -4
-    linear 0.02 xoffset 0 yoffset 0
-
-# Fireball
-
-transform slow_house_zoom:
-    zoom 1.0
-    xalign 0.5
-    yalign 0.5
-    linear 0.7 zoom 1.08
-
-
-transform fireball_trail(
-    start_x=0.82,
-    start_y=-0.56,
-    end_x=-0.06,
-    end_y=0.42,
-    start_zoom=0.55,
-    end_zoom=1.55,
-    start_rot=34,
-    end_rot=34,
-    fade_in=0.03,
-    travel_time=0.78
-):
-    xpos start_x
-    ypos start_y
-    zoom start_zoom
-    rotate start_rot
-    alpha 0.0
-
-    parallel:
-        linear fade_in alpha 1.0
-
-    parallel:
-        easein_quad travel_time xpos end_x ypos end_y zoom end_zoom rotate end_rot
-
-
-transform bg_darken_in:
-    alpha 0.0
-    linear 0.20 alpha 0.12
-    linear 0.30 alpha 0.24
-    linear 0.25 alpha 0.34
-
-
-screen fireball_darkening():
-    zorder 90
-
-    # Main dimming layer: translucent, not opaque.
-    add Solid("#000000") at bg_darken_in
-
-    # Very subtle warm tint so it doesn't feel like a plain fade-to-black.
-    add Solid("#2a1200") at bg_darken_in
-
-
-screen fireball():
-    zorder 100
-
-    fixed:
-        at fireball_trail(
-            start_x=0.82,
-            start_y=-0.56,
-            end_x=-0.06,
-            end_y=0.42,
-            start_zoom=0.34,
-            end_zoom=1.40,
-            start_rot=34,
-            end_rot=34,
-            fade_in=0.03,
-            travel_time=0.75
-        )
-
-        text "●":
-            xpos 150
-            ypos -210
-            size 150
-            color "#ff5a0018"
-
-        text "●":
-            xpos 120
-            ypos -165
-            size 135
-            color "#ff6a0022"
-
-        text "●":
-            xpos 92
-            ypos -126
-            size 120
-            color "#ff7a0030"
-
-        text "●":
-            xpos 68
-            ypos -92
-            size 108
-            color "#ff8a0044"
-
-        text "●":
-            xpos 48
-            ypos -62
-            size 96
-            color "#ff980066"
-
-        text "●":
-            xpos 30
-            ypos -38
-            size 84
-            color "#ffb02088"
-
-        text "●":
-            xpos 14
-            ypos -18
-            size 94
-            color "#ff6a0038"
-
-        text "●":
-            xpos 0
-            ypos 0
-            size 78
-            color "#ff9d00dd"
-
-        text "●":
-            xpos 6
-            ypos 6
-            size 58
-            color "#ffd15acc"
-
-        text "●":
-            xpos 14
-            ypos 14
-            size 36
-            color "#fff4cc"
-
-# Game starts here
+﻿# Game starts here
 label start:
-    
-
     "I knew something strange was happening. It was impossible not to notice."
 
     "Nobody ever talked about it, but everybody felt it. The strange feeling that something awful was coursing through our home."
@@ -182,8 +13,10 @@ label start:
     play sound "audio/rumble.mp3"
     pause 3
     play music "audio/beatdown.mp3"
+    
     show bg neighborhood with vpunch
 
+    show hina1
     show hina1 sweatx at left with dissolve
 
     h "How?! Kai, how did he get so strong? I thought we kept him in check this time!"
@@ -198,18 +31,20 @@ label start:
 
     with vpunch
     play sound "audio/rumble.mp3"
+
+    show cole1
     show cole1 at center, descend_from_top
     
     c "..."
+
     hide cole1
     hide hina1
     hide kai1
+
     scene bg neighborhood at slow_house_zoom
     show screen fireball_darkening
     "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     show screen fireball
-    play sound "audio/bang.mp3"
-    pause 4
     pause 0.70
     hide screen fireball
     hide screen fireball_darkening
@@ -222,19 +57,28 @@ label start:
     
     scene bg indoors with whiteflash
 
+    show hina1
     show hina1 angry grit angryx pointl at left, descend_from_top
+
+    show kai1
     show kai1 worry adjustr behindl sweatx at center, descend_from_top
+
+    show ame1
     show ame1 sad grit chestr chestl sweatx at right with dissolve:
         xalign 0.8
     
     a "Heh…? Uh… Uh… oh god…" 
     a "You guys couldn’t keep this outside?"
     # "[VFX" "{i}Cole moves in from the left, Hina and Kai come in front of Ame on the right side of the screen. Switch Hina to a nervous expression.{/i}]"
-
+    show hina1
     show hina1 angry grit angryx pointl zorder 3 with MoveTransition(0.25):
         xalign 0.6
+
+    show kai1
     show kai1 worry adjustr behindl sweatx zorder 2 with MoveTransition(0.25):
         xalign 1.0
+
+    show ame1
     show ame1 sad grit chestr chestl sweatx with dissolve:
         xalign 0.8
 
@@ -260,7 +104,9 @@ label start:
 
     "{i}I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy if I survive this…{/i}"
 
+    show cole1
     show cole1 blueangry with dissolve
+
     c "..."
 
     # "[VFX" "{i}shaking intensifies{/i}]"
@@ -272,6 +118,8 @@ label start:
     hide kai1
     hide cole1
     hide ame1
+
+    show ame1
     show ame1 sad grit chestr chestl at center with dissolve
     a "Wait, the next life? No… please…"
     stop music
@@ -284,6 +132,7 @@ label start:
     scene bg spirit_realm with fade
     # "[VFX" "Light recedes, Spirit Realm background, Hina (angry) and Kai (neutral)]"
 
+    show hina1
     show hina1 angry grit angryx pointl at left with dissolve
 
     h "Another world… gone… AHHHHH! We keep losing! Why? Why? Why?!!!!!"
@@ -316,8 +165,13 @@ label start:
     # [Spirit Realm Background with Hina (nervous), Kai (calm), and Ame (confused)]"
     
     hide hina1
+    
+    show hina1
     show hina1 sweatx at left
+    
+    show ame1
     show ame1 side open dropsx at center
+
     "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
 
     a "Is this Heaven?"
@@ -328,6 +182,7 @@ label start:
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
+    show hina1
     show hina1 smile sparklex at left, quick_jump
 
     h "YOU’RE ALIVE!"
@@ -335,10 +190,12 @@ label start:
     # "[Music" "Quirky Theme]"
     play music "audio/quirky_theme.mp3"
 
+    show ame1
     show ame1 smile sparklex
 
     a "I’m alive? Thank god… after that guy told me it wasn’t Heaven, I was afraid it was the other place."
 
+    show kai1
     show kai1 adjustr at right
 
     k "Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?"
@@ -352,32 +209,41 @@ label start:
     a "Thank you for reviving me. So… what exactly are you two?" 
     a"You aren’t normal, right? With all this divine energy and whatnot?"
 
+    show hina1
     show hina1 tongue sparklex at left
 
     h "I’m perfectly normal, thank you very much!"
 
+    show kai1
     show kai1 adjustr behindl at right
 
     k "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world."
 
     k "The other person you saw, Cole, is responsible for spreading it."
 
+    show hina1
     show hina1 angry grit angryx pointl at left
 
     h "That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!"
 
+    show kai1
     show kai1 frown
     k "That’s quite enough, Hina."
 
     hide hina1
+
+    show hina1
     show hina1 smirk at left
     stop music
     h "Uh oh, he’s mad."
 
     # "[Music" "Sad Theme]"
-    play music "audio/sad_theme.mp3" fadeout 0.5 fadein 0.5
-
+    play music "audio/sad_theme.mp3" fadeout 0.5 fadein 0.
+    
+    show hina1
     show hina1 sad frown sweatx at left
+
+    show ame1
     show ame1 sad grit chestr chestl at center
 
     a "Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?"
@@ -394,6 +260,7 @@ label start:
     h "I understand…"
 
     # "[VFX" "Move Hina closer to Ame]
+    show hina1
     show hina1 sad frown sweatx at left with move:
         xalign 0.1
     # General Conversation]"
@@ -479,18 +346,22 @@ label start:
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3" fadein 0.5
 
+    show ame1
     show ame1 neutral chestr sparklex
     a "So the two of you… you just go around worlds chasing this plague? Fighting it?"
 
+    show kai1
     show kai1 adjustr behindl at right
 
     k "There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter." 
     
     k "Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do."
 
+    show hina1
     show hina1 angry grit angryx at left
     h "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
 
+    show hina1
     show hina1 sad frown
     h "I seriously wish we could’ve saved your world, Ame. I’m so sorry."
 
@@ -502,6 +373,7 @@ label start:
 
     k "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
 
+    show hina1
     show hina1 smile pointl
     h "You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos."
 
@@ -524,27 +396,34 @@ label start:
 
     play music "audio/quirky_theme.mp3"
 
+    show hina1
     show hina1 smirk
     h "Yeah, there is."
 
+    show kai1
     show kai1 angry frown behindl angryx
     k "We are NOT sending them in there alone!"
 
+    show hina1
     show hina1 wink smile
     h "They won’t be alone, they have my mind link."
 
+    show ame1
     show ame1 angry grit angryx
     a "You two are talking like I’m not here again."
 
+    show kai1
     show kai1 worry nervous adjustr behindl dropsx
     k "Oh, uh… sorry."
 
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3" fadein 0.5
 
+    show hina1
     show hina1 smirk
     h "Ame, you want to help fight the war, right? How do you feel about giving us a little head start?"
     
+    show ame1
     show ame1 neutral chestr sparklex
     a "A head start?"
 
@@ -573,8 +452,14 @@ label start:
     h "Alright!"
 
     scene bg spirit_realm_portal with whiteflash
+
+    show ame1
     show ame1 neutral chestr sparklex at center
+
+    show hina1
     show hina1 smirk at left
+
+    show kai1
     show kai1 worry nervous adjustr behindl dropsx at right
     with whiteflash
     "{i}Heh??????{/i}"
@@ -582,7 +467,10 @@ label start:
     k "Wait!--"
 
     # "[aggressively flick the background and quickly have Ame fly toward a portal that appears.]"
+    show hina1
     show hina1 smirk at left, quick_jump
+
+    show ame1
     show ame1 side grit chestr dropsx at center, tossed_into_portal_right
     h "Stay in touch! Talk to you soon!"
 return
