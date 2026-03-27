@@ -42,6 +42,7 @@ label start:
     hide kai1
 
     scene bg neighborhood at slow_house_zoom
+    play sound "audio/meteor.mp3"
     show screen fireball_darkening
     "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     show screen fireball
