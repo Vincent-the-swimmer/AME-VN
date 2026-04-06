@@ -183,7 +183,7 @@ label start:
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
-    show hina1
+    show hina1 default
     show hina1 smile sparklex at left, quick_jump
 
     h "YOU’RE ALIVE!"
