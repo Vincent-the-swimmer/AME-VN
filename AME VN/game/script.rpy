@@ -1,5 +1,6 @@
 ﻿# Game starts here
 label start:
+
     "I knew something strange was happening. It was impossible not to notice."
 
     "Nobody ever talked about it, but everybody felt it. The strange feeling that something awful was coursing through our home."
@@ -16,7 +17,7 @@ label start:
     
     show bg neighborhood with vpunch
 
-    show hina1
+    show hina1 at left with dissolve
     show hina1 sweatx at left with dissolve
 
     h "How?! Kai, how did he get so strong? I thought we kept him in check this time!"
@@ -44,7 +45,7 @@ label start:
     scene bg neighborhood at slow_house_zoom
     play sound "audio/meteor.mp3"
     show screen fireball_darkening
-    "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
+    a "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
     show screen fireball
     pause 0.70
     hide screen fireball
@@ -58,13 +59,10 @@ label start:
     
     scene bg indoors with whiteflash
 
-    show hina1
     show hina1 angry grit angryx pointl at left, descend_from_top
 
-    show kai1
     show kai1 worry adjustr behindl sweatx at center, descend_from_top
 
-    show ame1
     show ame1 sad grit chestr chestl sweatx at right with dissolve:
         xalign 0.8
     
@@ -77,7 +75,7 @@ label start:
 
     show kai1
     show kai1 worry adjustr behindl sweatx zorder 2 with MoveTransition(0.25):
-        xalign 1.0
+        xalign 1.1
 
     show ame1
     show ame1 sad grit chestr chestl sweatx with dissolve:
@@ -94,15 +92,18 @@ label start:
 
     h "Screw you!"
 
-
+    show ame1 angry grit angryx -sweatx
     "{i}Oi! I’m not a piece of furniture! Stop ignoring me! Why do I have to be here for this?!{/i}"
 
     # "[VFX" "{i}shaking{/i}]
     with vpunch
     # {i}rumbling{/i}]"
 
+    show kai1 worry open behindl sweatx -adjustr with dissolve
     k "I’m sorry you got caught in the crossfire like this, young one…"
 
+
+    show ame1 side grit chestl chestr sweatx angryx
     "{i}I don’t care about your apology, just get out of my house. God, my insurance rate is gonna go crazy if I survive this…{/i}"
 
     show cole1
@@ -113,6 +114,7 @@ label start:
     # "[VFX" "{i}shaking intensifies{/i}]"
     with vpunch 
 
+    show hina1 sad frown sweatx -angryx with dissolve
     h "I’m sorry, kid… I didn’t mean to drag you and your home into this mess. I’m so, so sorry… I hope the next life is kind to you."
 
     hide hina1 
@@ -120,7 +122,6 @@ label start:
     hide cole1
     hide ame1
 
-    show ame1
     show ame1 sad grit chestr chestl at center with dissolve
     a "Wait, the next life? No… please…"
     stop music
@@ -133,7 +134,6 @@ label start:
     scene bg spirit_realm with fade
     # "[VFX" "Light recedes, Spirit Realm background, Hina (angry) and Kai (neutral)]"
 
-    show hina1
     show hina1 angry grit angryx pointl at left with dissolve
 
     h "Another world… gone… AHHHHH! We keep losing! Why? Why? Why?!!!!!"
@@ -150,7 +150,7 @@ label start:
 
     # "[VFX" "{i}fade to CG1 – Hina and Kai looking at Ame, laying unconscious on the floor{/i}]
     # Building Grandeur Theme]"
-    
+    scene cg1 with dissolve
 
     k "They’re here… but that’s impossible. I’ve never seen anything like this before."
 
@@ -159,21 +159,35 @@ label start:
     k "I can wake them up."
 
     # "[VFX" "Low, pulsing glow]
-    show flash:
+    image flash = Solid("#ffffff")
+
+    transform pulse:
+        xalign 0.5
+        yalign 0.5
+        xsize config.screen_width
+        ysize config.screen_height
         alpha 0.0
-        linear 0.75 alpha 1.0  
-        linear 0.75 alpha 0.0   
+        linear 0.8 alpha 0.25
+        linear 0.8 alpha 0.0
+        linear 0.8 alpha 0.36
+        linear 0.8 alpha 0.0
+        linear 0.8 alpha 0.47
+        linear 0.8 alpha 0.0
+    show flash at pulse
+    pause 2.5
+    hide pulse_glow
     # [Spirit Realm Background with Hina (nervous), Kai (calm), and Ame (confused)]"
-    
+    scene bg spirit_realm with dissolve
+
     hide hina1
     
-    show hina1
-    show hina1 sweatx at left
-    
-    show ame1
-    show ame1 side open dropsx at center
+    show hina1 sweatx at left with dissolve
+    show kai1 worry frown adjustr behindl sweatx at right with dissolve
+    show ame1 side frown dropsx at center with dissolve
 
     "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
+
+    
 
     a "Is this Heaven?"
     # "[Stop Music]"
@@ -183,40 +197,46 @@ label start:
 
     # "[VFX" "quickly expand and reduce Hina’s size to give the illusion of jumping]"
 
-    show hina1 default
-    show hina1 smile sparklex at left, quick_jump
+    show hina1
+    show hina1 smile sparklex -sweatx at left, quick_jump
 
     h "YOU’RE ALIVE!"
 
     # "[Music" "Quirky Theme]"
     play music "audio/quirky_theme.mp3"
 
-    show ame1
-    show ame1 smile sparklex
+    show ame1 wink smile sparklex -dropsx
 
     a "I’m alive? Thank god… after that guy told me it wasn’t Heaven, I was afraid it was the other place."
 
-    show kai1
     show kai1 adjustr at right
+    show ame1 neutral smile sparklex
 
     k "Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?"
 
     a "I’m Ame… you two are…"
 
+    show hina1 pointl wink
+
     h "I’m Hina, and this guy over here is Kai! You’re Ame, yeah? What an interesting name."
+
+    show hina1 neutral
 
     "{i}At the very least, it doesn’t seem like these two want to kill me.{/i}"
 
     a "Thank you for reviving me. So… what exactly are you two?" 
+
+    show ame1 side chestr dropsx -sparklex with dissolve
     a"You aren’t normal, right? With all this divine energy and whatnot?"
 
+    show ame1 neutral smile downl downr -dropsx
     show hina1
     show hina1 tongue sparklex at left
 
     h "I’m perfectly normal, thank you very much!"
 
-    show kai1
-    show kai1 adjustr behindl at right
+    show hina1 neutral smile fistl downr -sparklex
+    show kai1 adjustr open behindl -sweatx at right
 
     k "We’re gods. We went down to your world to protect it from… I guess you could call it a plague that was trying to infect your world."
 
@@ -228,12 +248,11 @@ label start:
     h "That’s because he’s pulled a fast one to get way too strong now! He’s impossible to stop!"
 
     show kai1
-    show kai1 frown
+    show kai1 frown angryx
     k "That’s quite enough, Hina."
 
     hide hina1
 
-    show hina1
     show hina1 smirk at left
     stop music
     h "Uh oh, he’s mad."
@@ -241,20 +260,28 @@ label start:
     # "[Music" "Sad Theme]"
     play music "audio/sad_theme.mp3" fadeout 0.5 fadein 0.
     
-    show hina1
-    show hina1 sad frown sweatx at left
+    show hina1 sad frown at left
 
+    show kai1 -angryx
     show ame1
     show ame1 sad grit chestr chestl at center
 
     a "Wait, so… what’s happened to my world? To my friends? My family? Are they… dead? Did the plague kill them?"
 
+    show hina1 sad frown sweatx at left
+
     h "Something like that… pretty close."
+
+    show hina1 -sweatx with dissolve
 
     a "Pretty close… meaning they’re not dead. Could you send me back? You’re gods, right?" 
     a "You were able to bring me back to life. Can you put me back in my world?"
 
+    show kai1 worry frown adjustr behindl sweatx
+
     k "That’s… that’s not possible. I’m really sorry, Ame, but even if we could send you back… you wouldn’t want to see it."
+
+    show kai1 -sweatx
 
     a "I need to know. I can’t… I can’t just not know what happened to them."
 
@@ -266,29 +293,41 @@ label start:
         xalign 0.1
     # General Conversation]"
 
+    show kai1 worry nervous adjustr behindl dropsx
     k "What are you doing, Hina? Don’t tell me you’re actually going to show them…?"
 
     h "They deserve to know. It’s the least we can do considering we’re the reason why they can’t be amongst the people they care about."
-
+    show kai1 -dropsx worry open adjustr behindl sweatx
     k "I’m not sure you should do this… but I suppose you could form a mind link with Ame."
 
     stop music
 
+    show ame1 neutral open chestr sparklex
     a "A mind link?"
 
     play music "audio/quirky_theme.mp3"
 
     k "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind!"
 
+    show kai1 worry nervous adjustr behindl dropsx
+
     k "Well… I guess she is kind of rash, but her heart’s usually in the right place! But I guess…"
+
+    show hina1 angry grit angryx pointl -sweatx
 
     h "Kai, shut up!"
 
+    show hina1 smile pointl -angryx
+    show kai1 neutral open sweatx -dropsx
+
     h "Ahem… The mind link will let me show you what happens to dimensions taken over by that plague. It can also do other things, but I won’t abuse it. You have my word."
+
+    show ame1 side frown chestl chestr sweatx -sparklex
 
     a "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
 
-    "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person. But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
+    "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person.{/i}"
+    "{i}But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
 
     h "It’s the only way I can show you what you want to see. It’s either this, or you don’t see it."
 
@@ -298,6 +337,7 @@ label start:
     #Ame hesistant, what does she look like?
     play music "audio/grandeur_theme.mp3" fadeout 0.5 fadein 0.5
 
+    show ame1 neutral downr open sweatx
     a "Alright...I need to know. I consent to the mind link. How does this work?"
 
     h "Well…"
@@ -340,7 +380,9 @@ label start:
     
     "{i}This is worse.{/i}"
     
-    "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
+    "{i}Just thinking about it makes me want to vomit… but weirdly enough, I’m keeping it together.{/i}"
+
+    "{i}Maybe it’s because these two gods are standing in front of me… but I’m calm. I’m angry, I’m disgusted… but I’m calm.{/i}"
 
     scene bg spirit_realm with dissolve
 
@@ -348,7 +390,7 @@ label start:
     play music "audio/grandeur_theme.mp3" fadein 0.5
 
     show ame1
-    show ame1 neutral chestr sparklex
+    show ame1 neutral chestr sweatx
     a "So the two of you… you just go around worlds chasing this plague? Fighting it?"
 
     show kai1
@@ -363,14 +405,18 @@ label start:
     h "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
 
     show hina1
-    show hina1 sad frown
+    show hina1 sad frown -angryx
     h "I seriously wish we could’ve saved your world, Ame. I’m so sorry."
 
     a "Don't apologize. It's not because of you."
 
+    show ame1 closed 
+
     "{i}I’m not sure I can even process what’s going through my mind right now, but I do think I can trust these two…{/i}" 
     
     "{i}I’m willing to give them grace and go along with them. They saved my life, after all.{/i}"
+
+    show ame1 neutral
 
     k "Anyway, this war is our responsibility, Ame. You don’t need to worry about it. What would you like to do?"
 
@@ -386,13 +432,14 @@ label start:
 
     a "...I can’t. I can’t restart my life and turn a blind eye to what happened in my world."
 
+    show kai1 worry nervous adjustr behindl dropsx
     k "Huh? Ok… well… what are you going to do then? Staying here won’t do anything."
 
     a "Well… is there anything I {i}can{/i} do to help?"
 
     # "[Music Stop]"
     stop music
-
+    show kai1 angry frown adjustr -dropsx
     k "No."
 
     play music "audio/quirky_theme.mp3"
@@ -414,9 +461,11 @@ label start:
     a "You two are talking like I’m not here again."
 
     show kai1
-    show kai1 worry nervous adjustr behindl dropsx
+    show kai1 worry nervous adjustr behindl dropsx -angryx
     k "Oh, uh… sorry."
 
+    show ame1 -angryx
+    show kai1 worry frown adjustr behindl -dropsx
     # "[Music" "Building Grandeur Theme]"
     play music "audio/grandeur_theme.mp3" fadein 0.5
 
@@ -439,8 +488,10 @@ label start:
     # "[Music" "Stop]"
     stop music
 
+    show ame1 closed angryx -sweatx -sparklex
     "{i}This is like watching two kids fight over who gets to play with a toy… but why am I the toy???{/i}"
 
+    show ame1 neutral open chestr sparklex -angryx
     # "[Music" "Continue]"
     play music "audio/grandeur_theme.mp3"
 
@@ -463,6 +514,7 @@ label start:
     show kai1
     show kai1 worry nervous adjustr behindl dropsx at right
     with whiteflash
+    show ame1 side grit chestr dropsx -sparklex
     "{i}Heh??????{/i}"
 
     k "Wait!--"
