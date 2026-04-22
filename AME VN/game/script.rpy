@@ -38,6 +38,8 @@ label start:
     
     c "..."
 
+    narr "Wait WAIT WAIT WAIT WAIT"
+
     hide cole1
     hide hina1
     hide kai1

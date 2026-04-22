@@ -13,4 +13,6 @@ define c = Character("Cole",
 define h = Character("Hina",
     callback= name_callback, cb_name = "hina1" )
 
+define narr = Character("AME", window_background="gui/altTextBox.png", what_italic = True, what_color = "#F7FBFA")
+
 # define eil = Character("Eileen", callback = name_callback, cb_name = "eileen")
