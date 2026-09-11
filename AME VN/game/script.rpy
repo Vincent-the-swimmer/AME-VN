@@ -187,7 +187,7 @@ label start:
     show kai1 worry frown adjustr behindl sweatx at right with dissolve
     show ame1 side frown dropsx at center with dissolve
 
-    "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
+    thought "{i}Heh? Where the hell am I? What even happened just now? I was at my house… then those people crashed into my house, and then… I died, didn’t I? I’m dead. So… what is this place?{/i}"
 
     
 
@@ -327,13 +327,13 @@ label start:
     show ame1 side frown chestl chestr sweatx -sparklex
 
     a "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
-
-    "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person.{/i}"
-    "{i}But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
+    
+    thought "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person.{/i}"
+    thought "{i}But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
 
     h "It’s the only way I can show you what you want to see. It’s either this, or you don’t see it."
 
-    "{i}I may not like the idea of having a stranger going through my mind, but…{/i}"
+    thought "{i}I may not like the idea of having a stranger going through my mind, but…{/i}"
 
 
     #Ame hesistant, what does she look like?

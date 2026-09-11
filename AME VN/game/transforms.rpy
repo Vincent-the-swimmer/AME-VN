@@ -157,3 +157,5 @@ screen fireball():
             size 36
             color "#fff4cc"
 
+style thought_window is window:
+    background Solid("#1a0033AA")  # purple, semi-transparent
