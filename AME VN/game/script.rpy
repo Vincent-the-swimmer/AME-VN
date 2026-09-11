@@ -7,7 +7,7 @@ label start:
 
     "Nobody knew what it was… but now I do."
 
-    "Because the sight I’m seeing outside my window… THAT is definitely not normal."
+    "Because the sight I’m seeing outside my window… is definitely NOT normal."
 
     play sound "audio/bang.mp3"
     pause 4
@@ -20,7 +20,7 @@ label start:
     show hina1 at left with dissolve
     show hina1 sweatx at left with dissolve
 
-    h "How?! Kai, how did he get so strong? I thought we kept him in check this time!"
+    h "How?! Kai, how did he get so strong? I thought we kept him in check!"
 
     # "[Kai, adjusting his glasses, appears]"
     show kai1 adjustr behindl at right with dissolve
@@ -38,8 +38,6 @@ label start:
     
     c "..."
 
-    narr "Wait WAIT WAIT WAIT WAIT"
-
     hide cole1
     hide hina1
     hide kai1
@@ -47,7 +45,7 @@ label start:
     scene bg neighborhood at slow_house_zoom
     play sound "audio/meteor.mp3"
     show screen fireball_darkening
-    a "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from this… thing!{/i}"
+    a "{i}Wait, wait, why are they getting closer? Why are they flying toward my house? What am I even supposed to do here?! I can’t run away from that… thing!{/i}"
     show screen fireball
     pause 0.70
     hide screen fireball
@@ -158,7 +156,7 @@ label start:
 
     h "That doesn’t matter! We need to help them!"
 
-    k "I can wake them up."
+    k "I'll try to wake them up."
 
     # "[VFX" "Low, pulsing glow]
     image flash = Solid("#ffffff")
@@ -214,7 +212,7 @@ label start:
     show kai1 adjustr at right
     show ame1 neutral smile sparklex
 
-    k "Well, we did all die, kind of, but not actually because we get resurrected when we end up here by our divine energy. I gave some of that to you. What’s your name?"
+    k "Well, we did all die, so to speak, but not actually. This is more of a… let’s call it a reset point. Humans don’t usually end up here, but since you did, I was able to revive you. What’s your name?"
 
     a "I’m Ame… you two are…"
 
@@ -309,11 +307,11 @@ label start:
 
     play music "audio/quirky_theme.mp3"
 
-    k "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but like… Hina won’t do anything bad to your mind!"
+    k "She’ll have access to your mind and vice versa. I mean, it sounds kind of scary, but… Hina won’t do anything harmful to your mind!"
 
     show kai1 worry nervous adjustr behindl dropsx
 
-    k "Well… I guess she is kind of rash, but her heart’s usually in the right place! But I guess…"
+    k "Well… I guess she is kind of rash, but her heart’s usually in the right place! Usually…"
 
     show hina1 angry grit angryx pointl -sweatx
 
@@ -322,11 +320,9 @@ label start:
     show hina1 smile pointl -angryx
     show kai1 neutral open sweatx -dropsx
 
-    h "Ahem… The mind link will let me show you what happens to dimensions taken over by that plague. It can also do other things, but I won’t abuse it. You have my word."
+    h "Ahem… I just want to show you what happens to worlds taken over by the plague. I won’t abuse it. You have my word."
 
     show ame1 side frown chestl chestr sweatx -sparklex
-
-    a "...you’ll have unrestricted access to my mind? I’m not sure I like the idea of that."
     
     thought "{i}Listen, it’s not like I have any especially weird thoughts or anything… seriously! I’m a normal person.{/i}"
     thought "{i}But still, wouldn’t a normal person hate to have a relative stranger have access to every single thought of theirs? Seriously though, I’m normal. Very normal.{/i}"
@@ -372,13 +368,15 @@ label start:
     play music "audio/sad_theme.mp3"
 
     
-    a "That’s… that’s what you’re saying happened to the people I care about?" 
+    a "That’s… that’s what happened to everyone I know?" 
 
     a "No… no… I don’t… I don’t want to believe you…"
 
-    h "But you do believe me. Because you know it’s true. We can’t send you back there."
+    h "But you do believe me. Because you know it’s true."
 
-    "{i}If I wasn’t in front of people I don’t know, I’d be on the ground sobbing. Of all the possibilities I thought of, including the death of every single person in my home…{/i}"
+    h "We can’t send you back there."
+
+    "{i}If I wasn’t in front of people I don’t know, I’d be on the ground in tears. Of all the possibilities I thought of, including the death of everyone in my home…{/i}"
     
     "{i}This is worse.{/i}"
     
@@ -398,13 +396,13 @@ label start:
     show kai1
     show kai1 adjustr behindl at right
 
-    k "There’s a method by which we can see which world it’s beginning to go to, so we build enough energy to open a gate that allows us to enter." 
+    k "We can see which world it’s invading, so we build up energy to open a gate to that world." 
     
     k "Unfortunately, that takes a lot of time. Lately, by the time we arrive… there’s not much we can do."
 
     show hina1
     show hina1 angry grit angryx at left
-    h "Cole’s too strong, and he gets into worlds faster than we can. It takes too long for us to build enough energy to construct a dimensional gate capable of handling our power."
+    h "Cole gets into worlds faster than we can. It takes too long for us to construct a dimensional gate that can handle our power."
 
     show hina1
     show hina1 sad frown -angryx
@@ -424,9 +422,9 @@ label start:
 
     show hina1
     show hina1 smile pointl
-    h "You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life separated from all this chaos."
+    h "You can’t go back to your world, but we could theoretically send you to a new one. Give you an opportunity to start a new life away from all this chaos."
 
-    h "You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out whatever dreams you had."
+    h "You shouldn’t stay here, at the very least. There’s no point. I recommend going to a new world and living out your best life."
 
     "{i}That’s a pretty good deal I’m being offered. Almost too good to be true. Straight out of a fictional story where I’d get the opportunity to live the way I want.{/i}"
 
@@ -435,7 +433,7 @@ label start:
     a "...I can’t. I can’t restart my life and turn a blind eye to what happened in my world."
 
     show kai1 worry nervous adjustr behindl dropsx
-    k "Huh? Ok… well… what are you going to do then? Staying here won’t do anything."
+    k "Huh? Ok… well… what are you proposing then? Staying here won’t do anything."
 
     a "Well… is there anything I {i}can{/i} do to help?"
 
@@ -460,7 +458,7 @@ label start:
 
     show ame1
     show ame1 angry grit angryx
-    a "You two are talking like I’m not here again."
+    a "You two are talking like I’m furniture again"
 
     show kai1
     show kai1 worry nervous adjustr behindl dropsx -angryx
