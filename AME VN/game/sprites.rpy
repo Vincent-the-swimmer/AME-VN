@@ -153,44 +153,44 @@ layeredimage kai1:
 
 ##########################################################
 
-#Sixth Sprites
+#rokka1 Sprites
 
-layeredimage sixth1:
-    at sprite_highlight('sixth1')
+layeredimage rokka11:
+    at sprite_highlight('rokka11')
     #base
-    always "sixth1_base"
+    always "rokka1_base"
 
     #eyes
     group eyes auto:
         attribute neutral default:
-            "sixth1_eyes_neutral"
+            "rokka1_eyes_neutral"
     
     #mouth
     group mouth auto:
         attribute open default:
-            "sixth1_mouth_open"
+            "rokka1_mouth_open"
     
     #armL
     group arml auto:
         attribute pointl default:
-            "sixth1_arml_pointl"
+            "rokka1_arml_pointl"
     #armR
     group armr auto:
         attribute hipr default:
-            "sixth1_armr_hipr"
+            "rokka1_armr_hipr"
     
     #cat
     group cat auto
     
     #extra
     attribute sweatx:
-        "sixth1_extra_sweat"
+        "rokka1_extra_sweat"
     attribute angryx:
-        "sixth1_extra_angry"
+        "rokka1_extra_angry"
     attribute sparklex:
-        "sixth1_extra_sparkle"
+        "rokka1_extra_sparkle"
     attribute dropsx:
-        "sixth1_extra_drops"  
+        "rokka1_extra_drops"  
     attribute blushx:    
-        "sixth1_extra_blush"
+        "rokka1_extra_blush"
 
