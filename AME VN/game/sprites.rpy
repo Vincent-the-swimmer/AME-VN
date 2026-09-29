@@ -155,8 +155,8 @@ layeredimage kai1:
 
 #rokka1 Sprites
 
-layeredimage rokka11:
-    at sprite_highlight('rokka11')
+layeredimage rokka1:
+    at sprite_highlight('rokka1')
     #base
     always "rokka1_base"
 
